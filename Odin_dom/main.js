@@ -28,3 +28,20 @@ p2.textContent="ME TOO!";
 pinkDiv.appendChild(p2);
 
 container.appendChild(pinkDiv);
+
+
+function alertFunction(){
+	alert("Howdy earthlings!");
+};
+var btn2= document.querySelector("#btn2");
+btn2.onclick=()=>alert("Yo! Planet!");
+
+var btn3= document.querySelector("#btn3");
+btn3.addEventListener("click",()=>{
+	alert("Hello World!");
+	});
+
+var btn4= document.querySelector("#btn4");
+btn4.addEventListener("click",alertFunction);
+
+//continue here "With all three methods we can access more information about the event by passing a parameter to the function that we are calling."
