@@ -30,9 +30,17 @@ pinkDiv.appendChild(p2);
 container.appendChild(pinkDiv);
 
 
+var btn= document.querySelector("#btn");
+
+btn.addEventListener("click", function(e){
+e.target.style.background="blue";	
+alert("Yo! Blue men group");
+});
+
 function alertFunction(){
 	alert("Howdy earthlings!");
 };
+
 var btn2= document.querySelector("#btn2");
 btn2.onclick=()=>alert("Yo! Planet!");
 
