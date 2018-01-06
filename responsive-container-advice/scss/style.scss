@@ -1,0 +1,82 @@
+$background: #351721;
+$container-background: #C7E6E1;
+$colour1: black;
+$colour2: black;
+$colour3: black;
+$colour4: black;
+$colour5: black;
+$colour6: black;
+body, html{
+  background: $background;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+div{
+  border-radius: 5%;
+}
+.container{
+  background: $container-background;
+  width: 90vmin;
+// You'll want this  height: 90vmin;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+   font-size: 1.2em;
+}
+p{
+  text-align: center;
+}
+.colour-row{
+  width: 100%;
+  height: 10vmin;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background: $container-background;
+}
+.colour{
+  width: 15%;
+  height: 90%;
+  
+}
+.colour1{
+  @extend .colour;
+   background: $colour1;
+}
+.colour2{
+  @extend .colour;
+   background: $colour2;
+}
+.colour3{
+  @extend .colour;
+   background: $colour3;
+}
+.colour4{
+  @extend .colour;
+   background: $colour4;
+}
+.colour5{
+  @extend .colour;
+   background: $colour5;
+}
+.colour6{
+  @extend .colour;
+   background: $colour6;
+}
+//estimate, change this
+@media(max-width:300px), (max-height: 300px){
+  .container{
+    font-size: 1em;
+  }
+}
+//estimate, change this
+@media(max-width:150px), (max-height: 150px){
+  
+}

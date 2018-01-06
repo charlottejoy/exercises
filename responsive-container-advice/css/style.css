@@ -1,0 +1,73 @@
+body, html {
+  background: #351721;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+div {
+  border-radius: 5%;
+}
+
+.container {
+  background: #C7E6E1;
+  width: 90vmin;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2em;
+}
+
+p {
+  text-align: center;
+}
+
+.colour-row {
+  width: 100%;
+  height: 10vmin;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background: #C7E6E1;
+}
+
+.colour, .colour1, .colour2, .colour3, .colour4, .colour5, .colour6 {
+  width: 15%;
+  height: 90%;
+}
+
+.colour1 {
+  background: black;
+}
+
+.colour2 {
+  background: black;
+}
+
+.colour3 {
+  background: black;
+}
+
+.colour4 {
+  background: black;
+}
+
+.colour5 {
+  background: black;
+}
+
+.colour6 {
+  background: black;
+}
+
+@media (max-width: 300px), (max-height: 300px) {
+  .container {
+    font-size: 1em;
+  }
+}
