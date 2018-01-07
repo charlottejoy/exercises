@@ -1,0 +1,179 @@
+body, html {
+  background: #00B0FF;
+  height: 100%;
+  width: 100%;
+  padding: 0px;
+  /*  display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    overflow: hidden;*/
+}
+
+::-webkit-scrollbar {
+  display: none;
+  width: 0px;
+  height: 0px;
+}
+
+nav {
+  background: #1DE9B6;
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  padding: 4vh 0vh 4vh 0vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+nav a {
+  text-decoration: none;
+  color: inherit;
+  padding: 4vh;
+  border: 1px #FFFF00 solid;
+}
+
+nav a:hover, nav a:active {
+  background: rgba(255, 255, 0, 0.3);
+}
+
+#hero {
+  top: 16;
+}
+
+.full-width {
+  position: relative;
+  width: 110%;
+  padding: 0;
+  margin: 0;
+  left: -5%;
+  height: 86vh;
+  /*display: flex;
+  justify-content: space-around;
+  align-items: center;*/
+  background: #FFFF00;
+}
+
+.row {
+  position: relative;
+  width: 90%;
+  left: 5%;
+  margin-bottom: 5vh;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.card {
+  position: relative;
+  margin: 2vh;
+  background: #FF5252;
+}
+.card .image {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #FFC400;
+}
+
+.cols-1 {
+  height: 50vh;
+  width: 100%;
+}
+.cols-1 .image {
+  height: 10vh;
+}
+
+.cols-2 {
+  height: 25vh;
+  width: 43%;
+}
+.cols-2 .image {
+  height: 10vh;
+}
+
+.cols-3 {
+  height: 25vh;
+  width: 27%;
+}
+.cols-3 .image {
+  height: 10vh;
+}
+
+.cols-4 {
+  height: 25vh;
+  width: 20%;
+}
+.cols-4 .image {
+  height: 10vh;
+}
+
+.container {
+  background: #FAFAFA;
+  width: 90vmin;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2em;
+}
+
+p {
+  text-align: center;
+}
+
+.colour-row {
+  width: 100%;
+  height: 10vmin;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background: #FAFAFA;
+}
+
+.colour, .colour1, .colour2, .colour3, .colour4, .colour5, .colour6 {
+  width: 15%;
+  height: 90%;
+}
+
+.colour1 {
+  background: #00B0FF;
+}
+
+.colour2 {
+  background: #FF5252;
+}
+
+.colour3 {
+  background: #D500F9;
+}
+
+.colour4 {
+  background: #FFFF00;
+}
+
+.colour5 {
+  background: #1DE9B6;
+}
+
+.colour6 {
+  background: #FFC400;
+}
+
+@media (max-width: 900px) {
+  .cols-4 {
+    width: 40%;
+  }
+}
+@media (max-width: 475px) {
+  .cols-2, .cols-3 {
+    width: 90%;
+  }
+}
