@@ -1,0 +1,65 @@
+html, body{
+	width: 100%;
+	height: 200%;
+	margin: 0;
+	font-family: "helvetcia neue", sans-serif;
+}
+
+.nav{
+	border-bottom: 1px solid #eaeaeb;
+	text-align: right;
+	height: 70px;
+	line-height: 70px; /* each line is the height of the
+ div= vertical centering*/
+
+}
+
+.menu{
+	margin: 0 30px 0 0 ;
+}
+.menu a{
+	text-decoration: none;
+	color: grey;
+	margin:0 10px;
+	line-height: 70px;
+	clear: right;
+}
+
+span{
+	color: #54D17A;
+}
+
+label{
+	margin: 0 40px 0 0 ;
+	font-size: 26px;
+	line-height: 70px;
+	display: none;
+	width: 26px;
+	float: right;
+	/*this is to make the label only be the width of the hamburger, otherwise, the cursor is pointer on the whole top row*/
+}
+#toggle{
+	display: none;
+}
+
+@media only screen and (max-width: 500px){
+	label{
+		display: block;
+		cursor: pointer;
+	}
+.menu{
+	text-align: center;
+	width: 100%;
+	display: none;
+}
+
+.menu a{
+	display: block;
+	border: 1px solid #eaeaeb;
+	margin: 0;
+}
+#toggle:checked + .menu{
+	display: block ;
+}
+
+}

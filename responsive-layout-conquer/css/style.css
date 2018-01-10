@@ -52,9 +52,9 @@ nav a:hover, nav a:active {
   margin: 0;
   left: -5%;
   height: 86vh;
-  /*display: flex;
+  display: flex;
   justify-content: space-around;
-  align-items: center;*/
+  align-items: center;
   background: #FFFF00;
 }
 
@@ -82,12 +82,16 @@ nav a:hover, nav a:active {
   background: #FFC400;
 }
 
+.text-container {
+  color: black;
+}
+
 .cols-1 {
   height: 50vh;
   width: 100%;
 }
 .cols-1 .image {
-  height: 10vh;
+  height: 30%;
 }
 
 .cols-2 {
@@ -103,7 +107,12 @@ nav a:hover, nav a:active {
   width: 27%;
 }
 .cols-3 .image {
-  height: 10vh;
+  height: 30%;
+}
+.cols-3 .text-container {
+  height: 70%;
+  top: 30%;
+  position: absolute;
 }
 
 .cols-4 {
