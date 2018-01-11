@@ -1,0 +1,146 @@
+$background: #351721;
+$container-background: #C7E6E1;
+$colour1: black;
+$colour2: white;
+$colour3: black;
+$colour4: black;
+$colour5: black;
+$colour6: black;
+$card-size: 400px;//50vw;
+$string-height:  6px;//.5vw
+$string-overlap: 20px;
+$animation:10s linear infinite;
+body, html{
+  background: $background;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding: 0%;
+  margin: 0%;
+  overflow: hidden;
+}
+div{
+  border-radius: 5%;
+}
+
+
+.string{
+  position: absolute;
+  background: beige;
+  width:($card-size/2) +$string-overlap;
+  z-index: 5;
+  height: $string-height;//.5vw;
+  top:(($card-size - $string-height)/2);//(($card-size - .5vw)/2);
+   // animation: front-turn $animation;
+}
+
+.string-l{
+  @extend .string;
+  left:-($card-size/2);
+}
+.string-r{
+  @extend .string;
+left: $card-size - $string-overlap;
+}
+.string-front{
+  height: 100%;
+  background: beige;
+  width: 100%;
+//animation: front-turn $animation;
+}
+
+.string-back{
+  height: 100%;
+  background: brown;
+  width: 100%;
+   //  animation: back-turn $animation;
+     transform: rotateX(180deg); 
+}
+.string-back, .string-front{
+  position: absolute;
+  backface-visibility:hidden;
+}
+
+.card{
+  width: $card-size;
+ height: $card-size;
+  position: relative;  
+}
+.circle, .square{
+  position: absolute;
+  left: 5%;
+  top: 5%;
+  width: 90%;
+  height: 90%;
+}
+.circle{
+  background: blue;
+  border-radius: 50%;
+}
+
+.square{
+  background: red;
+}
+.back{
+    transform: rotateX(180deg); 
+  animation: back-turn $animation;
+}
+
+.front{
+  animation: front-turn $animation;
+}
+.back, .front{
+  position: absolute;
+  width: 100%; height: 100%;
+   background: $container-background;
+  backface-visibility:hidden;
+   display: flex;
+ // flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  
+ // transition: transform 1s;
+}
+.hole{
+  border-radius: 50%;
+  background: $background;
+  width: 5vmin;
+  height: 5vmin;
+  border: 1px black solid;
+}
+.hole-l{
+  @extend .hole;
+  margin-left: 1vmin;
+  z-index: 4;
+}
+.hole-r{
+  @extend .hole;
+  margin-right: 1vmin;
+  z-index: 4;
+}
+@keyframes front-turn{
+ 0%, 20%, 40%, 50%, 60%, 66%, 70%, 72%, 74%, 80%, 90%, 100%{ transform: rotateX(180deg);}
+    10%, 30%, 45%, 55%, 63%, 68%, 71%, 73%,77%, 85%, 95%{transform: rotateX(360deg);}
+
+}
+//these are the same, just inverted. I want there to be a longer faster part. 
+@keyframes back-turn{
+0%, 20%, 40%, 50%, 60%, 66%, 70%, 72%, 74%, 80%, 90%, 100%{ transform: rotateX(360deg);}
+  10%, 30%, 45%, 55%, 63%, 68%, 71%, 73%,77%, 85%, 95%{transform: rotateX(180deg);
+  }
+}
+/*.container:hover .front{ transform: rotateX(180deg); }
+.container:hover .back { transform: rotateX(360deg); }*/
+//estimate, change this
+@media(max-width:300px), (max-height: 300px){
+  .container{
+    font-size: 1em;
+  }
+  $card-size: 200px;
+}
+//estimate, change this
+@media(max-width:150px), (max-height: 150px){
+  
+}
