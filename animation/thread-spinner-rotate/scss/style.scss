@@ -6,9 +6,9 @@ $colour3: black;
 $colour4: black;
 $colour5: black;
 $colour6: black;
-$card-size: 400px;//50vw;
-$string-height:  6px;//.5vw
-$string-overlap: 20px;
+$card-size: 60vmin;//400px;//50vw;
+$string-height:  .5vmin;//6px;//.5vw
+$string-overlap: 2vmin;//20px;
 $animation:10s linear infinite;
 body, html{
   background: $background;

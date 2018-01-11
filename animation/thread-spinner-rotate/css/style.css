@@ -17,18 +17,18 @@ div {
 .string, .string-l, .string-r {
   position: absolute;
   background: beige;
-  width: 220px;
+  width: 32vmin;
   z-index: 5;
-  height: 6px;
-  top: 197px;
+  height: 0.5vmin;
+  top: 29.75vmin;
 }
 
 .string-l {
-  left: -200px;
+  left: -30vmin;
 }
 
 .string-r {
-  left: 380px;
+  left: 58vmin;
 }
 
 .string-front {
@@ -50,8 +50,8 @@ div {
 }
 
 .card {
-  width: 400px;
-  height: 400px;
+  width: 60vmin;
+  height: 60vmin;
   position: relative;
 }
 
