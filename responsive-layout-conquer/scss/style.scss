@@ -12,6 +12,7 @@ body, html{
     height: 100%;
   width: 100%;
   padding:0px;
+  margin:0;
   font-family: "helvetic neue", sans-serif;
   font-size: 18px;
 /*  display: flex;
@@ -71,37 +72,44 @@ nav a:hover, nav a:active{
 label{
   display: none;
 }
-#hero{
-  top: 60px;
+
+
+p{
+  text-align: center;
 }
-
-
 
 .full-width{
   position: relative;
-  width: 110%;
+  width: 110%;//will need to change
+    height: 500px;
   padding: 0;
-  margin:0;
   left: -5%;
-  height: 86vh;
+    margin-top: 50px;
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: flex-end;
   background: $colour4;
 }
 
+#hero{
+  position: relative;
+  top: 0px;
+}
 
 .row{
+//  z-index: 4;
   position: relative;
+  margin-top: 50px;
+  background: $colour5;
   width: 90%;
- // background: $colour5;
   left: 5%;
  // height: 20vh;
-  margin-bottom: 5vh;// might need to change
-  display: flex;
+ // margin-bottom: 5vh;// might need to change
+ display: flex;
  flex-flow: row wrap;
-//  flex-direction: row;
-  justify-content: space-around;
+
+  justify-content: center;
+  //  flex-direction: row;
   align-items: center;
 
 }
@@ -121,18 +129,18 @@ label{
   color: black;
 }
 .cols-1{
-   height: 50vh;
+   min-height: 50vh;
   width: 100%;
   .image {height: 30%;}
 }
 .cols-2{
-   height: 25vh;
+   min-height: 25vh;
   width: 43%;
   .image {height: 10vh;}
    
 }
 .cols-3{
-   height: 25vh;
+   min-height: 25vh;
   width: 27%;
   .image {height: 30%;}
   .text-container{
@@ -142,11 +150,75 @@ label{
   }
 }
 .cols-4{
-   height: 25vh;
+   min-height: 25vh;
   width: 20%;
   .image {height: 10vh;}
 }
 
+
+
+
+
+//estimate, change this
+@media(max-width:1200px){
+  .cols-4{
+    width: 40%;
+  }
+}
+//estimate, change this
+@media(max-width:900px){
+  label{
+  display: block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: $colour5;
+    padding: 5px;
+    border-radius: 10%;
+}
+  .menu{
+    display: none;  
+
+}
+  nav{
+   // background: $colour5;
+    height: 66px;
+    top: 0px;
+  }
+  #hero{
+    top: -10px;
+    //margin-top:0px;
+  }
+nav a{
+  display: block;
+  text-decoration: none;
+  color: inherit;
+margin:0 20px;
+padding:20px 30px;
+  border: 1px $colour4 solid;
+ 
+     background: $colour5;
+}
+  
+  #toggle:checked + .menu{
+    display: block;
+      background: none;
+  width: 100%;
+ height: 100%;
+ // text-align: center;
+ // flex-flow: row wrap;
+ // padding: 8px 0 0 0;
+  position: relative;
+  top: 66px;
+  left: 0;
+  box-sizing: border-box;
+    z-index: 2;
+  }
+  
+ .cols-2, .cols-3{
+    width: 90%;
+  }
+}
 
 
 
@@ -162,9 +234,7 @@ label{
   align-items: center;
    font-size: 1.2em;
 }
-p{
-  text-align: center;
-}
+
 .colour-row{
   width: 100%;
   height: 10vmin;
@@ -202,57 +272,4 @@ p{
 .colour6{
   @extend .colour;
    background: $colour6;
-}
-//estimate, change this
-@media(max-width:1200px){
-  .cols-4{
-    width: 40%;
-  }
-}
-//estimate, change this
-@media(max-width:900px){
-  label{
-  display: block;
-}
-  .menu{
-    display: none;  
-
-}
-  nav{
-    background: $colour5;
-    height: 26px;
-    top: 10px;
-  }
-  #hero{
-    top: 0;
-  }
-nav a{
-  display: block;
-  text-decoration: none;
-  color: inherit;
-margin:0;
-padding:20px 30px;
-  border: 1px $colour4 solid;
-  width: 100%;
-     background: $colour5;
-}
-  
-  #toggle:checked + .menu{
-    display: block;
-      background: $colour5;
-  width: 100%;
- height: 100%;
- // text-align: center;
- // flex-flow: row wrap;
- // padding: 8px 0 0 0;
-  position: relative;
-  top: 0;
-  left: 0;
-  box-sizing: border-box;
-    z-index: 2;
-  }
-  
- .cols-2, .cols-3{
-    width: 90%;
-  }
 }

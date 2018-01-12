@@ -53,23 +53,26 @@ div {
   width: 60vmin;
   height: 60vmin;
   position: relative;
-}
-
-.circle, .square {
-  position: absolute;
-  left: 5%;
-  top: 5%;
-  width: 90%;
-  height: 90%;
-}
-
-.circle {
-  background: blue;
   border-radius: 50%;
 }
 
-.square {
-  background: red;
+.front-image, .back-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0%;
+  left: 0%;
+  border-radius: 50%;
+}
+
+.front-image {
+  background: lightblue;
+  overflow: hidden;
+}
+
+.back-image {
+  background: pink;
+  overflow: hidden;
 }
 
 .back {
@@ -90,6 +93,7 @@ div {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-radius: 50%;
 }
 
 .hole, .hole-l, .hole-r {

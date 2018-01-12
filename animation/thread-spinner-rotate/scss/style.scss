@@ -1,7 +1,7 @@
 $background: #351721;
 $container-background: #C7E6E1;
-$colour1: black;
-$colour2: white;
+$colour1: lightblue;
+$colour2: pink;
 $colour3: black;
 $colour4: black;
 $colour5: black;
@@ -67,28 +67,35 @@ left: $card-size - $string-overlap;
   width: $card-size;
  height: $card-size;
   position: relative;  
+  border-radius: 50%;
+ // overflow: hidden;
 }
-.circle, .square{
+.front-image, .back-image{
   position: absolute;
-  left: 5%;
-  top: 5%;
-  width: 90%;
-  height: 90%;
-}
-.circle{
-  background: blue;
+  width: 100%;
+  height: 100%;
+  top: 0%;
+  left: 0%;
   border-radius: 50%;
 }
+.front-image{
+  background: $colour1;
+  overflow: hidden;
+}
 
-.square{
-  background: red;
+.back-image{
+  background: $colour2;
+    overflow: hidden;
 }
 .back{
+//   background: $colour2;
     transform: rotateX(180deg); 
   animation: back-turn $animation;
+  
 }
 
 .front{
+  // background: $colour1;
   animation: front-turn $animation;
 }
 .back, .front{
@@ -100,7 +107,8 @@ left: $card-size - $string-overlap;
  // flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  
+  border-radius: 50%;
+ // overflow: hidden;
  // transition: transform 1s;
 }
 .hole{
