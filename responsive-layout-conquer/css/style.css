@@ -1,16 +1,11 @@
 body, html {
-  background: #00B0FF;
+  background: white;
   height: 100%;
   width: 100%;
   padding: 0px;
   margin: 0;
   font-family: "helvetic neue", sans-serif;
   font-size: 18px;
-  /*  display: flex;
-    justify-content: center;
-    align-items: center;
-  
-    overflow: hidden;*/
 }
 
 ::-webkit-scrollbar {
@@ -26,10 +21,11 @@ nav {
   left: 0;
   position: fixed;
   z-index: 2;
+  color: white;
 }
 
 .menu {
-  background: #1DE9B6;
+  background: #383E4C;
   width: 100%;
   height: 100%;
   display: flex;
@@ -38,6 +34,7 @@ nav {
   top: 0;
   left: 0;
   box-sizing: border-box;
+  text-align: center;
 }
 
 nav a {
@@ -45,7 +42,7 @@ nav a {
   color: inherit;
   margin: 10px 15px 20px 15px;
   padding: 20px 30px;
-  border: 1px #FFFF00 solid;
+  border: 1px white solid;
 }
 
 h2 {
@@ -56,7 +53,7 @@ h2 {
 }
 
 nav a:hover, nav a:active {
-  background: rgba(255, 255, 0, 0.3);
+  background: #646d7c;
 }
 
 #toggle {
@@ -71,17 +68,25 @@ p {
   text-align: center;
 }
 
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .full-width {
   position: relative;
-  width: 110%;
+  width: 100%;
   height: 500px;
   padding: 0;
-  left: -5%;
+  left: 0;
   margin-top: 50px;
   display: flex;
-  justify-content: space-around;
-  align-items: flex-end;
-  background: #FFFF00;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url(http://www.free-css.com/assets/files/free-css-templates/preview/page196/conquer/assets/img/4-5.jpg) no-repeat;
+  background-size: cover;
 }
 
 #hero {
@@ -91,71 +96,112 @@ p {
 
 .row {
   position: relative;
-  margin-top: 50px;
-  background: #1DE9B6;
-  width: 90%;
-  left: 5%;
+  margin-top: 30px;
+  background: #383E4C;
+  width: 1400;
   display: flex;
   flex-flow: row wrap;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .card {
   position: relative;
-  margin: 2vh;
-  background: #FF5252;
+  background: #D500F9;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
 }
 .card .image {
   width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
   background: #FFC400;
+  background: url(http://www.free-css.com/assets/files/free-css-templates/preview/page196/conquer/assets/img/1-1.jpg) no-repeat;
+  background-size: cover;
+}
+
+.card:first-child {
+  margin-left: 0;
 }
 
 .text-container {
   color: black;
+  background: #F2F2F2;
+  left: 0;
+  width: 100%;
+  position: relative;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .cols-1 {
-  min-height: 50vh;
   width: 100%;
 }
 .cols-1 .image {
-  height: 30%;
+  height: 500px;
+}
+.cols-1 .text-container {
+  min-height: 180px;
 }
 
 .cols-2 {
-  min-height: 25vh;
   width: 43%;
 }
 .cols-2 .image {
-  height: 10vh;
+  height: 180px;
+}
+.cols-2 .text-container {
+  min-height: 180px;
 }
 
 .cols-3 {
-  min-height: 25vh;
-  width: 27%;
+  width: 450px;
+  margin-left: 35px;
 }
 .cols-3 .image {
-  height: 30%;
+  height: 125px;
 }
 .cols-3 .text-container {
-  height: 70%;
-  top: 30%;
-  position: absolute;
+  min-height: 125px;
 }
 
 .cols-4 {
-  min-height: 25vh;
   width: 20%;
 }
 .cols-4 .image {
-  height: 10vh;
+  height: 250px;
+}
+.cols-4 .text-container {
+  min-height: 250px;
+}
+
+.form {
+  padding: 25px;
+  display: flex;
+  flex-direction: row;
+  width: 900px;
+}
+
+input {
+  width: 400px;
+  height: 40px;
+  margin-bottom: 30px;
+}
+
+textarea {
+  width: 400px;
+  height: 200px;
 }
 
 @media (max-width: 1200px) {
+  .row {
+    width: 1000px;
+  }
+
+  .cols-3 {
+    width: 200px;
+  }
+
   .cols-4 {
     width: 40%;
   }
@@ -166,7 +212,7 @@ p {
     position: absolute;
     top: 10px;
     right: 10px;
-    background: #1DE9B6;
+    background: #383E4C;
     padding: 5px;
     border-radius: 10%;
   }
@@ -182,6 +228,7 @@ p {
 
   #hero {
     top: -10px;
+    margin-top: 0px;
   }
 
   nav a {
@@ -190,8 +237,8 @@ p {
     color: inherit;
     margin: 0 20px;
     padding: 20px 30px;
-    border: 1px #FFFF00 solid;
-    background: #1DE9B6;
+    border: 1px white solid;
+    background: #383E4C;
   }
 
   #toggle:checked + .menu {
@@ -209,6 +256,13 @@ p {
   .cols-2, .cols-3 {
     width: 90%;
   }
+}
+@media (max-width: 500px) {
+  /* .row{
+     width: 100%;
+     margin-left: 15px;
+     margin-right: 15px;
+   }*/
 }
 .container {
   background: #FAFAFA;
@@ -240,7 +294,7 @@ p {
 }
 
 .colour2 {
-  background: #FF5252;
+  background: #F2F2F2;
 }
 
 .colour3 {
@@ -252,7 +306,7 @@ p {
 }
 
 .colour5 {
-  background: #1DE9B6;
+  background: #383E4C;
 }
 
 .colour6 {
