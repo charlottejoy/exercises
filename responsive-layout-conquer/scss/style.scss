@@ -1,6 +1,12 @@
 // it was suggested to build this: http://www.free-css.com/free-css-templates/page196/conquer as a beginners project. I'm creating this with what I know and then maybe updating as I learn better techniques. The colours are inspired by my yoga mat. BREAKS ARE IMPORTANT.
 $background: white;
 $container-background: #FAFAFA;
+$width-max: 1200px;
+$width-1200: 1000px;
+$width-1050: 800px;
+/*$width-840:  things move a lot
+$width-700:
+$width-550:*/
 $colour1: #00B0FF;
 $colour2:#F2F2F2;// #FF5252;
 $colour3: #D500F9;
@@ -71,9 +77,9 @@ p{
   text-align: center;
 }
 .content{
-  display: flex;
+ /* display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center;*/
 }
 .full-width{
   position: relative;
@@ -98,22 +104,23 @@ p{
 
 .row{
   position: relative;
-  margin-top: 30px;
-  background: $colour5;
-  width: 1400;
+  margin-top: 20px;
+ // background: $colour5;
+ // width: 1400;
 display: flex;
- flex-flow: row wrap;
-justify-content: space-between;
+flex-flow: row wrap;
+  justify-content: center;
   align-items: flex-start;
 
 }
 
 .card{
   position: relative;
-  background: $colour3;
-  display: flex;
-  flex-direction: column;
- margin-top: 20px;
+ // background: $colour3;
+/*  display: flex;
+  flex-direction: column;*/
+   margin: 0 15px;
+ margin-top: 30px;
 //  margin-left: 35px;
   .image{
     width: 100%; 
@@ -125,7 +132,7 @@ justify-content: space-between;
 }
 
 .card:first-child{
-  margin-left: 0;
+ // margin-left: 0;
 }
 
 .text-container{
@@ -137,9 +144,10 @@ justify-content: space-between;
   padding: 10px;
   box-sizing: border-box;
 }
+
 .cols-1{
   // min-height: 800px;
-  width: 100%;
+  width: $width-max - 30px;
   .image {height: 500px;}
    .text-container{
     min-height:180px;
@@ -149,7 +157,8 @@ justify-content: space-between;
 }
 .cols-2{
   // min-height: 360px;
-  width: 43%;
+  width: ($width-max - 60px) / 2; // 565px;
+ 
   .image {height: 180px;}
    .text-container{
     min-height:180px;
@@ -158,8 +167,9 @@ justify-content: space-between;
    
 }
 .cols-3{
-width: 450px;//400px;
-  margin-left: 35px;
+width:($width-max - 90px) / 3;// 370px;//1200-90 padding
+ // margin-left: 30px;
+ // padding: 0 15px;
 // min-height: 250px;
  // height: 600px;
 //  height: auto;
@@ -174,7 +184,8 @@ width: 450px;//400px;
 }
 .cols-4{
   // min-height: 500px;
-  width: 20%;
+  width: ($width-max - 120px) / 4;//270px;
+ //  padding: 0 15px;
   .image {height: 250px;}
    .text-container{
     min-height:250px;
@@ -204,18 +215,44 @@ textarea{
 
 //estimate, change this
 @media(max-width:1200px){
-  .row{
-    width: 1000px;
+  .cols-1{
+  width: $width-1200 - 30px;
   }
+  .cols-2{
+    width: ($width-1200 - 60px)/2;  
+  }
+.cols-3{
+width: ($width-1200 - 90px) / 3;
+  } 
+  
+.cols-4{
+  // min-height: 500px;
+  width: ($width-1200 - 120px) / 4;//270px;
+}
+}
+
+@media(max-width:1050px){
+  .cols-1{
+    width: $width-1050 - 30px;
+    }
+
+  .cols-2{
+      width: ($width-1050 - 60px)/2;  
+    }
+
   .cols-3{
-width: 200px;
-  }
+  width: ($width-1050 - 90px) / 3;
+    } 
+
   .cols-4{
-    width: 40%;
+    // min-height: 500px;
+    width: ($width-1050 - 200px) / 2;//270px;
+    margin: 0 50px;
+     margin-top: 30px;
   }
 }
 //estimate, change this
-@media(max-width:900px){
+@media(max-width:840px){
   label{
   display: block;
     position: absolute;
@@ -264,16 +301,14 @@ padding:20px 30px;
     z-index: 2;
   }
   
-  .row{
-    
-  }
-
-  .cols-2, .cols-3{
-    width: 90%;
-  }
+  
 }
 
-@media(max-width:500px){
+@media(max-width: 700px){//tablet
+  
+}
+  
+@media(max-width:550px){
  /* .row{
     width: 100%;
     margin-left: 15px;
@@ -282,7 +317,7 @@ padding:20px 30px;
 }
 
 
-
+/*
 .container{
   background: $container-background;
   width: 90vmin;
@@ -332,4 +367,4 @@ padding:20px 30px;
 .colour6{
   @extend .colour;
    background: $colour6;
-}
+}*/
