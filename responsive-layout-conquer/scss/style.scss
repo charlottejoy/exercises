@@ -21,6 +21,7 @@ body, html{
   margin:0;
   font-family: "helvetic neue", sans-serif;
   font-size: 18px;
+  scroll-behavior: smooth;
 }
 ::-webkit-scrollbar { 
     display: none;
@@ -81,7 +82,7 @@ p{
 .full-width{
   position: relative;
   width: 100%;//will need to change
-    height: 500px;
+    min-height: 500px;
   padding: 0;
   left: 0;
     margin-top: 50px;
@@ -170,11 +171,14 @@ width:($width-max - 90px) / 3;// 370px;//1200-90 padding
 // min-height: 250px;
  // height: 600px;
 //  height: auto;
-  .image {height: 125px;
+  .image {
+    height: 125px;
+  
 
   }
   .text-container{
  min-height:125px;
+   // height: 50%;
   // height: auto;
 //   top: 125px;
   }
@@ -194,18 +198,18 @@ width:($width-max - 90px) / 3;// 370px;//1200-90 padding
   padding: 25px;
   display: flex;
   flex-direction: row;
-  width: 900px;
+  width: $width-max * .75;//900
 }
 
 
 input{
-  width: 400px;
+  width: $width-max * .25;//400px;
   height: 40px;
   margin-bottom: 30px;
 }
 
 textarea{
-  width: 400px;
+width: $width-max * .25;//400px;
   height: 200px;
 }
 
@@ -299,8 +303,7 @@ padding:20px 30px;
   }
   
   .cols-1{
-    width: 100%;
-    margin: 0 30px;
+    width: 98%;
     }
 
   .cols-2{
@@ -321,7 +324,22 @@ padding:20px 30px;
 margin-left: 0;
       margin-right: 0;
   }
-  
+ //this is just to avoid weird right white space. Adjust 
+  .form{
+ 
+  width: $width-800 * .75;//
+}
+
+
+input{
+  width: $width-800 * .25;//
+ 
+}
+
+textarea{
+width: $width-800 * .25;//
+
+}
   
 }
 
@@ -335,6 +353,23 @@ margin-left: 0;
       .cols-4{
    width: 45%;
   }
+  //this is just to avoid weird right white space. Adjust 
+  .form{
+ 
+  width: 80%;//
+    flex-direction: column;
+}
+
+
+input{
+  width: 100%;
+ 
+}
+
+textarea{
+width: 100%;
+
+}
 }
   
 @media(max-width:450px){
@@ -342,57 +377,14 @@ margin-left: 0;
   cols-1 is still wider
   using percentages + margins
   }*/
-}
-
-
-/*
-.container{
-  background: $container-background;
-  width: 90vmin;
-// You'll want this  height: 90vmin;
- // position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-   font-size: 1.2em;
-}
-
-.colour-row{
-  width: 100%;
-  height: 10vmin;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-  background: $container-background;
-}
-.colour{
-  width: 15%;
-  height: 90%;
+  .cols-1, .cols-2{
+   width: 95%; 
+  }
+  .cols-3,{
+    width: 86%;
+  }
+  .cols-4{
+    width: 80%;
+  }
   
 }
-.colour1{
-  @extend .colour;
-   background: $colour1;
-}
-.colour2{
-  @extend .colour;
-   background: $colour2;
-}
-.colour3{
-  @extend .colour;
-   background: $colour3;
-}
-.colour4{
-  @extend .colour;
-   background: $colour4;
-}
-.colour5{
-  @extend .colour;
-   background: $colour5;
-}
-.colour6{
-  @extend .colour;
-   background: $colour6;
-}*/
