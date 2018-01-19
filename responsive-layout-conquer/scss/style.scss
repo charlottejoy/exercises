@@ -1,6 +1,7 @@
 // it was suggested to build this: http://www.free-css.com/free-css-templates/page196/conquer as a beginners project. I'm creating this with what I know and then maybe updating as I learn better techniques. The colours are inspired by my yoga mat. BREAKS ARE IMPORTANT.
 $background: white;
 $container-background: #FAFAFA;
+$menu-text: #FAFAFA;
 $width-max: 1200px;
 $width-1200: 1000px;
 $width-1050: 800px;
@@ -19,7 +20,7 @@ body, html{
   width: 100%;
   padding:0px;
   margin:0;
-  font-family: "helvetic neue", sans-serif;
+  font-family: "helvetica", "arial", sans-serif;
   font-size: 18px;
   scroll-behavior: smooth;
 }
@@ -35,14 +36,19 @@ nav{
   left: 0;
   position: fixed;
    z-index: 2;
-  color: white;
+  color: $menu-text;
+  background: $colour5;
+   display: flex;
+  justify-content: center;
+ align-items: center;
 }
 .menu{
-  background: $colour5;
-  width: 100%;
- height: 100%;
+  //background: green;
+  width:  $width-max - 200px;
+ height: 80px;
  display: flex;
-  justify-content: center;
+ justify-content: center;
+  align-items: center;
   position: relative;
   top: 0;
   left: 0;
@@ -52,11 +58,17 @@ nav{
 nav a{
   text-decoration: none;
   color: inherit;
- margin:10px 15px 20px 15px;
+
+ margin-right:20px;//10px 15px 20px 15px;
 padding:20px 30px;
-  border: 1px white solid;
-font-size: 1.5em;
+  //width: 150px;
+  border: 1px $menu-text solid;
+font-size: 24px;
   font-weight: bold;
+}
+
+nav a:last-child{
+  margin-right: 0px;
 }
 
 nav a:hover, nav a:active{
@@ -69,7 +81,14 @@ nav a:hover, nav a:active{
 label{
   display: none;
 }
-
+#about{
+   position: absolute;
+  top: -150px;
+}
+#services, #contact{
+  position: absolute;
+  top: -100px;
+}
 
 p{
   text-align: center;
@@ -85,7 +104,7 @@ p{
     min-height: 500px;
   padding: 0;
   left: 0;
-    margin-top: 50px;
+    margin-bottom: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -97,12 +116,11 @@ p{
 #home{
   position: relative;
   top: 0px;
-
 }
 
 .row{
   position: relative;
-  margin-top: 20px;
+  margin-bottom: 20px;
  // background: $colour5;
  // width: 1400;
 display: flex;
@@ -118,7 +136,7 @@ flex-flow: row wrap;
 /*  display: flex;
   flex-direction: column;*/
    margin: 0 15px;
- margin-top: 30px;
+ margin-bottom: 30px;
 //  margin-left: 35px;
   .image{
     width: 100%; 
@@ -216,6 +234,9 @@ width: $width-max * .25;//400px;
 
 //estimate, change this
 @media(max-width:1200px){
+  nav a{
+    font-size: 20px;
+  }
   .cols-1{
   width: $width-1200 - 30px;
   }
@@ -233,6 +254,24 @@ width: ($width-1200 - 90px) / 3;
 }
 
 @media(max-width:1050px){
+  .menu{
+    width: $width-1050 -300;
+  }
+  
+nav a{
+ margin-right:10px;//10px 15px 20px 15px;
+//padding:20px 20px;
+  //width: 150px;
+//  border: 1px $menu-text solid;
+//font-size: 24px;
+  font-weight: regular;
+}
+
+nav a:last-child{
+  margin-right: 0px;
+}
+
+
   .cols-1{
     width: $width-1050 - 30px;
     }
@@ -253,7 +292,7 @@ width: ($width-1200 - 90px) / 3;
   }
 }
 //estimate, change this
-@media(max-width:800px){
+@media(max-width:840px){
   label{
   display: block;
     position: absolute;
@@ -264,43 +303,70 @@ width: ($width-1200 - 90px) / 3;
     border-radius: 10%;
 }
   .menu{
-    display: none;  
-
+  // display: flex;
+    //justify-content: center;
+    //flex-direction: row;
+   display: block;
+    overflow: hidden;
+    height: 0px;
+     width: 100%;
+    padding: 0 20px 0 20px;
+      position: absolute;
+    top: 70px;
+  
+    -webkit-transition: height 2s; /* Safari */
+    transition: height 2s;
 }
   nav{
-   // background: $colour5;
-    height: 66px;
+    background: none;
+   // height: 66px;
+    width: 100%;
     top: 0px;
+   // margin:0 20px;
   }
-  #hero{
-    top: -10px;
-    margin-top:0px;
-  }
+ 
 nav a{
   display: block;
   text-decoration: none;
   color: inherit;
-margin:0 20px;
+  width: 100%;
+ //margin:0 20px 0 20px;
 padding:20px 30px;
-  border: 1px white solid;
- 
+//  height: 50px;
+    border: none;
      background: $colour5;
+  box-sizing: border-box;
 }
+  nav :not(:last-child){
+      border-bottom: .25px $menu-text solid;
+  }
   
   #toggle:checked + .menu{
     display: block;
-      background: none;
-  width: 100%;
- height: 100%;
+   //   background: none;
+  //width: 100%;
+height: 500px;// padding + px, probably about this
  // text-align: center;
  // flex-flow: row wrap;
  // padding: 8px 0 0 0;
-  position: relative;
-  top: 66px;
+  position: absolute;
+  top: 70px;
   left: 0;
   box-sizing: border-box;
-    z-index: 2;
+  z-index: 2;
+      -webkit-transition: height 2s; /* Safari */
+    transition: height 2s;
   }
+  
+  
+  label{
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    right: 20px;
+    padding: 2px 10px 4px 10px;
+  }
+  
   
   .cols-1{
     width: 98%;
@@ -339,8 +405,15 @@ input{
 textarea{
 width: $width-800 * .25;//
 
+} 
+  #services, #contact{
+    position: absolute;
+  top: 0px;
 }
-  
+  #about,{
+    position: absolute;
+  top: -50px; 
+  }
 }
 
 @media(max-width: 650px){//tablet
