@@ -2,20 +2,33 @@
 $background: white;
 $container-background: #FAFAFA;
 $menu-text: #FAFAFA;
+$nav: #383E4C;
+$card:#F2F2F2;
+  
+$button:  #383E4C;
+  $button-text: white;
+$button-hover:blue;
+
+$submit: #00B0FF;
+$submit-hover: brown;
+
+
+ $form-field-background: white;
+$form-color: black;
 $width-max: 1200px;
 $width-1200: 1000px;
 $width-1050: 800px;
 $width-800:  770px;
 /*$width-700:
 $width-550:*/
-$colour1: #00B0FF;
-$colour2:#F2F2F2;// #FF5252;
-$colour3: #D500F9;
-$colour4: #FFFF00;
-$colour5: #383E4C;//#1DE9B6;
-$colour6: #FFC400;
+$colour1: #00B0FF;// unused aqua
+;// #FF5252; unused
+$colour3: #D500F9;//unused
+$colour4: #FFFF00;//unused
+$colour5:#1DE9B6;//unused
+$colour6: #FFC400;//unused
 body, html{
-  background: $background;
+  background: blue;//$background;
     height: 100%;
   width: 100%;
   padding:0px;
@@ -23,6 +36,9 @@ body, html{
   font-family: "helvetica", "arial", sans-serif;
   font-size: 18px;
   scroll-behavior: smooth;
+/*display: flex;//adding flex screws with the height of content
+  flex-direction: row;
+  justify-content: center;*/
 }
 ::-webkit-scrollbar { 
     display: none;
@@ -30,14 +46,17 @@ body, html{
   height: 0px;
 }
 nav{
- width: 100%;
+max-width: 1400px;
+  width: 100%;
+   margin:0 auto;
+  left: 0;//these were needed for fixed with auto margin
+  right: 0;
  height: 100px;
   top: 0;
-  left: 0;
   position: fixed;
    z-index: 2;
   color: $menu-text;
-  background: $colour5;
+  background: $nav;
    display: flex;
   justify-content: center;
  align-items: center;
@@ -90,17 +109,35 @@ label{
   top: -100px;
 }
 
-p{
+/*p{
   text-align: center;
-}
+}*/
 .content{
- /* display: flex;
-  flex-direction: column;
-  align-items: center;*/
+max-width: 1400px;
+  width: 100%;
+  margin:0 auto;
+ position: relative;
+  top: 0px;
+  background: $background;
+
+}
+button{
+  font-size: 24px;
+  color: white;
+  background: $button;
+  padding: 20px;
+  border-radius: 5%;
+  border: none;
+   -webkit-transition: background .5s; /* Safari */
+    transition: background .5s;
+}
+button:hover{
+  background: blue;
 }
 .full-width{
   position: relative;
   width: 100%;//will need to change
+  max-width: 1400px;
     min-height: 500px;
   padding: 0;
   left: 0;
@@ -111,6 +148,9 @@ p{
   align-items: center;
    background: url(http://www.free-css.com/assets/files/free-css-templates/preview/page196/conquer/assets/img/4-5.jpg) no-repeat;
   background-size: cover;
+}
+.full-width:last-child{
+margin-bottom: 0px;
 }
 
 #home{
@@ -141,7 +181,7 @@ flex-flow: row wrap;
   .image{
     width: 100%; 
     position: relative;
-    background: $colour6;
+   // background: $colour6;
       background: url(http://www.free-css.com/assets/files/free-css-templates/preview/page196/conquer/assets/img/1-1.jpg) no-repeat;
      background-size: cover;
   }
@@ -153,13 +193,16 @@ flex-flow: row wrap;
 
 .text-container{
   color: black;
-  background: $colour2;
+ background: $card;
   left: 0;
   width: 100%;
    position: relative;
   padding: 10px;
   box-sizing: border-box;
+  text-align: center;
+  overflow: auto;
 }
+
 
 .cols-1{
   // min-height: 800px;
@@ -170,7 +213,15 @@ flex-flow: row wrap;
   // top: 500px;
    
   }
+  h2{
+    text-align: left;
+  }
+   button{
+   float: left;
+  }
 }
+
+
 .cols-2{
   // min-height: 360px;
   width: ($width-max - 60px) / 2; // 565px;
@@ -179,6 +230,10 @@ flex-flow: row wrap;
    .text-container{
     min-height:180px;
  //  top: 180px;
+     position: relative;
+  }
+  button{
+   float: right;
   }
    
 }
@@ -200,6 +255,9 @@ width:($width-max - 90px) / 3;// 370px;//1200-90 padding
   // height: auto;
 //   top: 125px;
   }
+  h2{
+    text-align: left;
+  }
 }
 .cols-4{
   // min-height: 500px;
@@ -213,21 +271,68 @@ width:($width-max - 90px) / 3;// 370px;//1200-90 padding
 }
 
 .form{
-  padding: 25px;
+ // padding: 25px;
+  width: $width-max * .7;//840
+  //background: blue;
+  position: relative;
+  
+}
+.fields{
   display: flex;
-  flex-direction: row;
-  width: $width-max * .75;//900
+  flex-flow: row wrap;
+  justify-content: space-between;
+ // background: yellow;
+  width: 100%;
+}
+.column{
+  margin: 0;
+    width: 48%;//432px
+ // background: green;
+}
+input, textarea, .explanation{
+     background: $form-field-background;
+  color: $form-color;
+  border-radius: 10px;
+  border: none;
+   margin-bottom: 15px;
+   box-sizing: border-box;
+  width: 100%;
+  font-size: 1.25em;
+   font-family: "helvetica", "arial", sans-serif;
 }
 
+.explanation{
+  background: $form-field-background;
+  color: $form-color;
+  padding: 15px 30px;
+  line-height: 1.5em;
+  text-align: center;
 
-input{
-  width: $width-max * .25;//400px;
+}
+
+input{//400px;
   height: 40px;
-  margin-bottom: 30px;
+  
+}
+
+#submit{
+  font-size: 24px;
+  color: white;
+  background: $submit;
+  width: auto;
+  height: auto;
+  padding: 20px;
+  border-radius: 5%;
+  border: none;
+   -webkit-transition: background .5s; /* Safari */
+    transition: background .5s;
+}
+#submit:hover{
+  background: $submit-hover;
 }
 
 textarea{
-width: $width-max * .25;//400px;
+//$width-max * .50;//400px;
   height: 200px;
 }
 
@@ -298,7 +403,7 @@ nav a:last-child{
     position: absolute;
     top: 10px;
     right: 10px;
-    background: $colour5;
+    background: $nav;
     padding: 5px;
     border-radius: 10%;
 }
@@ -334,7 +439,7 @@ nav a{
 padding:20px 30px;
 //  height: 50px;
     border: none;
-     background: $colour5;
+     background: $nav;
   box-sizing: border-box;
 }
   nav :not(:last-child){
@@ -370,14 +475,23 @@ height: 500px;// padding + px, probably about this
   
   .cols-1{
     width: 98%;
+     button{
+      float: none;
+    }
     }
 
   .cols-2{
       width: $width-800; 
+    button{
+      float: none;
+    }
     }
 
   .cols-3{
   width: $width-800 - 260px;
+     h2{
+      text-align: center;
+    }
     } 
 
       .r4{
@@ -392,20 +506,17 @@ margin-left: 0;
   }
  //this is just to avoid weird right white space. Adjust 
   .form{
- 
-  width: $width-800 * .75;//
+  width: 100%;
+    padding:0px 15px;
+    box-sizing: border-box;
 }
-
-
-input{
-  width: $width-800 * .25;//
  
-}
-
-textarea{
-width: $width-800 * .25;//
-
-} 
+  .column{
+   width: 100%;
+  } 
+  .column:first-child{
+    background: none
+  }
   #services, #contact{
     position: absolute;
   top: 0px;
@@ -427,22 +538,7 @@ width: $width-800 * .25;//
    width: 45%;
   }
   //this is just to avoid weird right white space. Adjust 
-  .form{
- 
-  width: 80%;//
-    flex-direction: column;
-}
 
-
-input{
-  width: 100%;
- 
-}
-
-textarea{
-width: 100%;
-
-}
 }
   
 @media(max-width:450px){

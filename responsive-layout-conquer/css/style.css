@@ -1,7 +1,7 @@
 /*$width-700:
 $width-550:*/
 body, html {
-  background: white;
+  background: blue;
   height: 100%;
   width: 100%;
   padding: 0px;
@@ -9,6 +9,9 @@ body, html {
   font-family: "helvetica", "arial", sans-serif;
   font-size: 18px;
   scroll-behavior: smooth;
+  /*display: flex;//adding flex screws with the height of content
+    flex-direction: row;
+    justify-content: center;*/
 }
 
 ::-webkit-scrollbar {
@@ -18,10 +21,13 @@ body, html {
 }
 
 nav {
+  max-width: 1400px;
   width: 100%;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
   height: 100px;
   top: 0;
-  left: 0;
   position: fixed;
   z-index: 2;
   color: #FAFAFA;
@@ -80,19 +86,38 @@ label {
   top: -100px;
 }
 
-p {
+/*p{
   text-align: center;
+}*/
+.content {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  top: 0px;
+  background: white;
 }
 
-.content {
-  /* display: flex;
-   flex-direction: column;
-   align-items: center;*/
+button {
+  font-size: 24px;
+  color: white;
+  background: #383E4C;
+  padding: 20px;
+  border-radius: 5%;
+  border: none;
+  -webkit-transition: background .5s;
+  /* Safari */
+  transition: background .5s;
+}
+
+button:hover {
+  background: blue;
 }
 
 .full-width {
   position: relative;
   width: 100%;
+  max-width: 1400px;
   min-height: 500px;
   padding: 0;
   left: 0;
@@ -103,6 +128,10 @@ p {
   align-items: center;
   background: url(http://www.free-css.com/assets/files/free-css-templates/preview/page196/conquer/assets/img/4-5.jpg) no-repeat;
   background-size: cover;
+}
+
+.full-width:last-child {
+  margin-bottom: 0px;
 }
 
 #home {
@@ -129,7 +158,6 @@ p {
 .card .image {
   width: 100%;
   position: relative;
-  background: #FFC400;
   background: url(http://www.free-css.com/assets/files/free-css-templates/preview/page196/conquer/assets/img/1-1.jpg) no-repeat;
   background-size: cover;
 }
@@ -142,6 +170,8 @@ p {
   position: relative;
   padding: 10px;
   box-sizing: border-box;
+  text-align: center;
+  overflow: auto;
 }
 
 .cols-1 {
@@ -153,6 +183,12 @@ p {
 .cols-1 .text-container {
   min-height: 180px;
 }
+.cols-1 h2 {
+  text-align: left;
+}
+.cols-1 button {
+  float: left;
+}
 
 .cols-2 {
   width: 570px;
@@ -162,6 +198,10 @@ p {
 }
 .cols-2 .text-container {
   min-height: 180px;
+  position: relative;
+}
+.cols-2 button {
+  float: right;
 }
 
 .cols-3 {
@@ -172,6 +212,9 @@ p {
 }
 .cols-3 .text-container {
   min-height: 125px;
+}
+.cols-3 h2 {
+  text-align: left;
 }
 
 .cols-4 {
@@ -185,20 +228,65 @@ p {
 }
 
 .form {
-  padding: 25px;
+  width: 840px;
+  position: relative;
+}
+
+.fields {
   display: flex;
-  flex-direction: row;
-  width: 900px;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.column {
+  margin: 0;
+  width: 48%;
+}
+
+input, textarea, .explanation {
+  background: white;
+  color: black;
+  border-radius: 10px;
+  border: none;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 1.25em;
+  font-family: "helvetica", "arial", sans-serif;
+}
+
+.explanation {
+  background: white;
+  color: black;
+  padding: 15px 30px;
+  line-height: 1.5em;
+  text-align: center;
 }
 
 input {
-  width: 300px;
   height: 40px;
-  margin-bottom: 30px;
+}
+
+#submit {
+  font-size: 24px;
+  color: white;
+  background: #00B0FF;
+  width: auto;
+  height: auto;
+  padding: 20px;
+  border-radius: 5%;
+  border: none;
+  -webkit-transition: background .5s;
+  /* Safari */
+  transition: background .5s;
+}
+
+#submit:hover {
+  background: brown;
 }
 
 textarea {
-  width: 300px;
   height: 200px;
 }
 
@@ -324,13 +412,22 @@ textarea {
   .cols-1 {
     width: 98%;
   }
+  .cols-1 button {
+    float: none;
+  }
 
   .cols-2 {
     width: 770px;
   }
+  .cols-2 button {
+    float: none;
+  }
 
   .cols-3 {
     width: 510px;
+  }
+  .cols-3 h2 {
+    text-align: center;
   }
 
   .r4 {
@@ -344,15 +441,17 @@ textarea {
   }
 
   .form {
-    width: 577.5px;
+    width: 100%;
+    padding: 0px 15px;
+    box-sizing: border-box;
   }
 
-  input {
-    width: 192.5px;
+  .column {
+    width: 100%;
   }
 
-  textarea {
-    width: 192.5px;
+  .column:first-child {
+    background: none;
   }
 
   #services, #contact {
@@ -374,19 +473,6 @@ textarea {
 
   .cols-4 {
     width: 45%;
-  }
-
-  .form {
-    width: 80%;
-    flex-direction: column;
-  }
-
-  input {
-    width: 100%;
-  }
-
-  textarea {
-    width: 100%;
   }
 }
 @media (max-width: 450px) {
