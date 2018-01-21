@@ -1,7 +1,10 @@
 /*$width-700:
 $width-550:*/
-body, html {
+body {
   background: #F2F2F2;
+}
+
+body, html {
   height: 100%;
   width: 100%;
   padding: 0px;
@@ -93,6 +96,7 @@ label {
   max-width: 1400px;
   width: 100%;
   margin: 0 auto;
+  padding-top: 50px;
   position: relative;
   top: 0px;
   background: white;
@@ -135,12 +139,21 @@ button:hover {
 }
 
 #home {
+  width: 100%;
+  min-height: 500px;
   position: relative;
   top: 0px;
-  background: url(http://www.free-css.com/assets/files/free-css-templates/preview/page196/conquer/assets/img/4-5.jpg) no-repeat;
-  background-attachment: fixed;
-  width: 100%;
   background-size: cover;
+  max-width: 1400px;
+  min-height: 500px;
+  padding: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .row {
@@ -403,7 +416,7 @@ textarea {
     top: 70px;
     left: 0;
     box-sizing: border-box;
-    z-index: 2;
+    z-index: 5;
     -webkit-transition: height 2s;
     /* Safari */
     transition: height 2s;
