@@ -1,7 +1,7 @@
 /*$width-700:
 $width-550:*/
 body, html {
-  background: blue;
+  background: #F2F2F2;
   height: 100%;
   width: 100%;
   padding: 0px;
@@ -137,6 +137,10 @@ button:hover {
 #home {
   position: relative;
   top: 0px;
+  background: url(http://www.free-css.com/assets/files/free-css-templates/preview/page196/conquer/assets/img/4-5.jpg) no-repeat;
+  background-attachment: fixed;
+  width: 100%;
+  background-size: cover;
 }
 
 .row {
@@ -146,6 +150,10 @@ button:hover {
   flex-flow: row wrap;
   justify-content: center;
   align-items: flex-start;
+}
+
+ul {
+  text-align: left;
 }
 
 .card {
@@ -271,7 +279,7 @@ input {
 #submit {
   font-size: 24px;
   color: white;
-  background: #00B0FF;
+  background: #383E4C;
   width: auto;
   height: auto;
   padding: 20px;
@@ -283,7 +291,7 @@ input {
 }
 
 #submit:hover {
-  background: brown;
+  background: #00B0Ff;
 }
 
 textarea {

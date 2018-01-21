@@ -7,10 +7,10 @@ $card:#F2F2F2;
   
 $button:  #383E4C;
   $button-text: white;
-$button-hover:blue;
+$button-hover:#00B0FF;
 
-$submit: #00B0FF;
-$submit-hover: brown;
+$submit: #383E4C;
+$submit-hover: #00B0Ff;
 
 
  $form-field-background: white;
@@ -28,7 +28,7 @@ $colour4: #FFFF00;//unused
 $colour5:#1DE9B6;//unused
 $colour6: #FFC400;//unused
 body, html{
-  background: blue;//$background;
+  background: $card;//$background;
     height: 100%;
   width: 100%;
   padding:0px;
@@ -156,6 +156,11 @@ margin-bottom: 0px;
 #home{
   position: relative;
   top: 0px;
+   background: url(http://www.free-css.com/assets/files/free-css-templates/preview/page196/conquer/assets/img/4-5.jpg) no-repeat;
+  background-attachment: fixed;
+  width: 100%;//will need to change
+   background-size: cover;
+
 }
 
 .row{
@@ -170,6 +175,9 @@ flex-flow: row wrap;
 
 }
 
+ul{
+  text-align: left;
+}
 .card{
   position: relative;
  // background: $colour3;
@@ -275,6 +283,7 @@ width:($width-max - 90px) / 3;// 370px;//1200-90 padding
   width: $width-max * .7;//840
   //background: blue;
   position: relative;
+  //text-align: left;
   
 }
 .fields{
@@ -334,6 +343,8 @@ input{//400px;
 textarea{
 //$width-max * .50;//400px;
   height: 200px;
+  //text-align: left;
+ // align-content:left;
 }
 
 
