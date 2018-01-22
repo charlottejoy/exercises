@@ -115,7 +115,7 @@ button {
 }
 
 button:hover {
-  background: blue;
+  background: #00B0FF;
 }
 
 .full-width {
@@ -138,6 +138,11 @@ button:hover {
   margin-bottom: 0px;
 }
 
+.full-width p {
+  width: 770px;
+  text-align: center;
+}
+
 #home {
   width: 100%;
   min-height: 500px;
@@ -146,7 +151,6 @@ button:hover {
   background-size: cover;
   max-width: 1400px;
   min-height: 500px;
-  padding: 0;
   left: 0;
   right: 0;
   margin: auto;
@@ -169,8 +173,13 @@ ul {
   text-align: left;
 }
 
+p {
+  line-height: 1.5em;
+}
+
 .card {
   position: relative;
+  background: #F2F2F2;
   /*  display: flex;
     flex-direction: column;*/
   margin: 0 15px;
@@ -178,48 +187,32 @@ ul {
 }
 .card .image {
   width: 100%;
-  position: relative;
-  background: url(http://www.free-css.com/assets/files/free-css-templates/preview/page196/conquer/assets/img/1-1.jpg) no-repeat;
-  background-size: cover;
+  background: blue;
+  height: auto;
 }
 
 .text-container {
   color: black;
-  background: #F2F2F2;
   left: 0;
   width: 100%;
-  position: relative;
-  padding: 10px;
+  padding: 10px 30px;
   box-sizing: border-box;
-  text-align: center;
   overflow: auto;
+  marin-top: 0;
 }
 
 .cols-1 {
   width: 1170px;
 }
-.cols-1 .image {
-  height: 500px;
-}
 .cols-1 .text-container {
-  min-height: 180px;
-}
-.cols-1 h2 {
   text-align: left;
-}
-.cols-1 button {
-  float: left;
 }
 
 .cols-2 {
   width: 570px;
 }
-.cols-2 .image {
-  height: 180px;
-}
-.cols-2 .text-container {
-  min-height: 180px;
-  position: relative;
+.cols-2 h2, .cols-2 p {
+  text-align: left;
 }
 .cols-2 button {
   float: right;
@@ -228,12 +221,6 @@ ul {
 .cols-3 {
   width: 370px;
 }
-.cols-3 .image {
-  height: 125px;
-}
-.cols-3 .text-container {
-  min-height: 125px;
-}
 .cols-3 h2 {
   text-align: left;
 }
@@ -241,11 +228,11 @@ ul {
 .cols-4 {
   width: 270px;
 }
-.cols-4 .image {
-  height: 250px;
-}
 .cols-4 .text-container {
-  min-height: 250px;
+  text-align: center;
+}
+.cols-4 p {
+  text-align: left;
 }
 
 .form {
@@ -275,6 +262,10 @@ input, textarea, .explanation {
   width: 100%;
   font-size: 1.25em;
   font-family: "helvetica", "arial", sans-serif;
+}
+
+input, textarea {
+  padding: 5px 15px;
 }
 
 .explanation {
@@ -311,6 +302,27 @@ textarea {
   height: 200px;
 }
 
+.side--right, .side--left {
+  display: none;
+}
+
+@media (min-width: 1400px) {
+  .side--left {
+    display: inline-block;
+    position: fixed;
+    left: 0vw;
+    top: 540px;
+    z-index: -1;
+  }
+
+  .side--right {
+    display: inline-block;
+    position: fixed;
+    right: 0vw;
+    top: 540px;
+    z-index: -1;
+  }
+}
 @media (max-width: 1200px) {
   nav a {
     font-size: 20px;
@@ -322,6 +334,10 @@ textarea {
 
   .cols-2 {
     width: 470px;
+    text-align: center;
+  }
+  .cols-2 button {
+    float: none;
   }
 
   .cols-3 {
@@ -371,8 +387,11 @@ textarea {
     top: 10px;
     right: 10px;
     background: #383E4C;
-    padding: 5px;
     border-radius: 10%;
+    font-size: 30px;
+    font-weight: bold;
+    right: 20px;
+    padding: 2px 10px 4px 10px;
   }
 
   .menu {
@@ -422,14 +441,6 @@ textarea {
     transition: height 2s;
   }
 
-  label {
-    font-size: 30px;
-    font-weight: bold;
-    position: absolute;
-    right: 20px;
-    padding: 2px 10px 4px 10px;
-  }
-
   .cols-1 {
     width: 98%;
   }
@@ -439,13 +450,20 @@ textarea {
 
   .cols-2 {
     width: 770px;
+    /* .image{
+       height: 240px;
+     }*/
   }
-  .cols-2 button {
-    float: none;
+  .cols-2 h2, .cols-2 p {
+    text-align: center;
   }
 
   .cols-3 {
     width: 510px;
+    text-align: center;
+    /* .image{
+       height: 180px;
+     }*/
   }
   .cols-3 h2 {
     text-align: center;
@@ -459,6 +477,11 @@ textarea {
     width: 285px;
     margin-left: 0;
     margin-right: 0;
+  }
+
+  .full-width p {
+    width: 90%;
+    text-align: center;
   }
 
   .form {
