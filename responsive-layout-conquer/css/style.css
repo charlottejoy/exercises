@@ -1,3 +1,5 @@
+/* it was suggestedhere: https://medium.com/@GarrettLevine/5-projects-to-complete-when-starting-to-learn-front-end-web-development-48e8a1ce3178
+to build this: http://www.free-css.com/free-css-templates/page196/conquer as a beginners project. I'm creating this with what I know and then maybe updating as I learn better techniques. The colours were once inspired by my yoga mat. BREAKS ARE IMPORTANT.*/
 /*$width-700:
 $width-550:*/
 body {
@@ -95,11 +97,12 @@ nav a:hover, nav a:active {
   padding-top: 50px;
   position: relative;
   top: 0px;
-  background: #29308A;
+  background: none;
 }
 
-button {
+.card button {
   font-size: 24px;
+  font-weight: bold;
   color: white;
   background: #29308A;
   padding: 20px;
@@ -108,10 +111,31 @@ button {
   -webkit-transition: background .5s;
   /* Safari */
   transition: background .5s;
+  width: auto;
+  height: auto;
 }
 
-button:hover {
+.card button:hover {
   background: #8750A1;
+}
+
+.button--full-width, .full-width button {
+  font-size: 24px;
+  font-weight: bold;
+  color: #29308A;
+  background: #C39BD0;
+  padding: 20px;
+  border-radius: 5%;
+  border: none;
+  -webkit-transition: background .5s;
+  /* Safari */
+  transition: background .5s;
+  width: auto;
+  height: auto;
+}
+
+.button--full-width:hover, .full-width button:hover {
+  background: #ffffff;
 }
 
 .full-width {
@@ -126,8 +150,16 @@ button:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: url(https://images.unsplash.com/photo-1417577097439-425fb7dec05e?ixlib=rb-0.3.5&s=eeda0529992cea043a854602f12763cf&auto=format&fit=crop&w=889&q=80);
-  background-size: cover;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.bg-image {
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .full-width:last-child {
@@ -144,6 +176,7 @@ button:hover {
   min-height: 500px;
   position: relative;
   top: 0px;
+  background: rgba(0, 0, 0, 0.4);
   background-size: cover;
   max-width: 1400px;
   min-height: 500px;
@@ -191,10 +224,13 @@ p {
 }
 
 .card a, .full-width a {
-  text-decoration: none;
   font-weight: bold;
   text-transform: uppercase;
   color: inherit;
+}
+
+.card a:hover, .full-width a:hover {
+  text-decoration: double underline;
 }
 
 .text-container {
@@ -284,24 +320,6 @@ input, textarea {
 
 input {
   height: 40px;
-}
-
-#submit {
-  font-size: 24px;
-  color: white;
-  background: #383E4C;
-  width: auto;
-  height: auto;
-  padding: 20px;
-  border-radius: 5%;
-  border: none;
-  -webkit-transition: background .5s;
-  /* Safari */
-  transition: background .5s;
-}
-
-#submit:hover {
-  background: #00B0Ff;
 }
 
 textarea {

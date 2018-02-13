@@ -1,5 +1,6 @@
-// it was suggested to build this: http://www.free-css.com/free-css-templates/page196/conquer as a beginners project. I'm creating this with what I know and then maybe updating as I learn better techniques. The colours were once inspired by my yoga mat. BREAKS ARE IMPORTANT.
-$background: #29308A;//white;
+/* it was suggestedhere: https://medium.com/@GarrettLevine/5-projects-to-complete-when-starting-to-learn-front-end-web-development-48e8a1ce3178
+to build this: http://www.free-css.com/free-css-templates/page196/conquer as a beginners project. I'm creating this with what I know and then maybe updating as I learn better techniques. The colours were once inspired by my yoga mat. BREAKS ARE IMPORTANT.*/
+$background: none;//#29308A;//white;
 $whole-background: black;//#FAFAFA;
 $menu-text: #9F88D8;//#FAFAFA;
 $nav: #080928;//#383E4C;
@@ -11,9 +12,9 @@ $button:  #29308A;//#383E4C;
   $button-text: white;
 $button-hover:#8750A1;//#00B0FF;
 
-$submit: #383E4C;
-$submit-hover: #00B0Ff;
-
+$button--full-width: #C39BD0;
+$button--full-width-hover:#ffffff;// #00B0Ff;
+$button--full-width-text: #29308A;
 
  $form-field-background: white;
 $form-color: black;
@@ -126,8 +127,10 @@ max-width: 1400px;
   background: $background;
 
 }
-button{
+
+.card button{
   font-size: 24px;
+   font-weight: bold;
   color: $button-text;
   background: $button;
   padding: 20px;
@@ -135,10 +138,30 @@ button{
   border: none;
    -webkit-transition: background .5s; /* Safari */
     transition: background .5s;
+   width: auto;
+  height: auto;
 }
-button:hover{
+.card button:hover{
   background: $button-hover;
 }
+
+.button--full-width, .full-width button{
+  font-size: 24px;
+  font-weight: bold;
+  color: $button--full-width-text;
+  background:  $button--full-width;
+  padding: 20px;
+  border-radius: 5%;
+  border: none;
+   -webkit-transition: background .5s; /* Safari */
+    transition: background .5s;
+   width: auto;
+  height: auto
+}
+.button--full-width:hover, .full-width button:hover{
+  background: $button--full-width-hover;
+}
+
 
 .full-width{
   position: relative;
@@ -152,8 +175,18 @@ button:hover{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-   background: url(https://images.unsplash.com/photo-1417577097439-425fb7dec05e?ixlib=rb-0.3.5&s=eeda0529992cea043a854602f12763cf&auto=format&fit=crop&w=889&q=80);//url(http://www.free-css.com/assets/files/free-css-templates/preview/page196/conquer/assets/img/4-5.jpg) no-repeat;
-  background-size: cover;
+   background:rgba(0,0,0,0.4);// url(https://images.unsplash.com/photo-1417577097439-425fb7dec05e?ixlib=rb-0.3.5&s=eeda0529992cea043a854602f12763cf&auto=format&fit=crop&w=889&q=80);//url(http://www.free-css.com/assets/files/free-css-templates/preview/page196/conquer/assets/img/4-5.jpg) no-repeat;
+  //background-size: cover;
+}
+
+.bg-image{
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  
 }
 .full-width:last-child{
 margin-bottom: 0px;
@@ -167,7 +200,7 @@ margin-bottom: 0px;
 	min-height: 500px;
 	  position: relative;
 	 top: 0px;
-	//background: green;f
+	background: rgba(0,0,0,0.4);
 	 background-size: cover;
   max-width: 1400px;
     min-height: 500px;
@@ -230,12 +263,13 @@ p{
   color: $full-width-text;
 }
 .card a, .full-width a{
-  text-decoration: none;
   font-weight: bold;
   text-transform: uppercase;
   color: inherit;
 }
-
+.card a:hover, .full-width a:hover{
+  text-decoration: double underline; 
+}
 .text-container{
   color: $card-text;
   left: 0;
@@ -356,21 +390,7 @@ input{//400px;
   
 }
 
-#submit{
-  font-size: 24px;
-  color: $button-text;
-  background: $submit;
-  width: auto;
-  height: auto;
-  padding: 20px;
-  border-radius: 5%;
-  border: none;
-   -webkit-transition: background .5s; /* Safari */
-    transition: background .5s;
-}
-#submit:hover{
-  background: $submit-hover;
-}
+
 
 textarea{
 //$width-max * .50;//400px;
