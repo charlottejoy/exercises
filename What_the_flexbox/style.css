@@ -1,0 +1,47 @@
+.container{
+	min-height: 100vh;
+	border: 2px black solid;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.box{
+	color: white;
+	font-size: 100px;
+	text-align: center;
+	width:30%;
+	border: 10px solid white;
+	box-sizing: border-box;
+}
+
+.box1{
+	background: teal;
+}
+.box2{
+	background: lightblue;
+}
+.box3{
+	background: purple;
+}
+.box4{
+	background: navy;
+}
+.box5{
+	background: yellow;
+}
+.box6{
+	background: orange;
+}
+.box7{
+	background: red;
+}
+.box8{
+	background: grey;
+}
+.box9{
+	background: green;
+}
+.box10{
+	background: blue;
+}

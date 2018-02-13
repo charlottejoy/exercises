@@ -1,7 +1,7 @@
 /*$width-700:
 $width-550:*/
 body {
-  background: #F2F2F2;
+  background: black;
 }
 
 body, html {
@@ -33,8 +33,8 @@ nav {
   top: 0;
   position: fixed;
   z-index: 2;
-  color: #FAFAFA;
-  background: #383E4C;
+  color: #9F88D8;
+  background: #080928;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -58,7 +58,7 @@ nav a {
   color: inherit;
   margin-right: 20px;
   padding: 20px 30px;
-  border: 1px #FAFAFA solid;
+  border: 1px #9F88D8 solid;
   font-size: 24px;
   font-weight: bold;
 }
@@ -68,14 +68,10 @@ nav a:last-child {
 }
 
 nav a:hover, nav a:active {
-  background: #646d7c;
+  background: #29308A;
 }
 
-#toggle {
-  display: none;
-}
-
-label {
+.hamburger {
   display: none;
 }
 
@@ -99,13 +95,13 @@ label {
   padding-top: 50px;
   position: relative;
   top: 0px;
-  background: white;
+  background: #29308A;
 }
 
 button {
   font-size: 24px;
   color: white;
-  background: #383E4C;
+  background: #29308A;
   padding: 20px;
   border-radius: 5%;
   border: none;
@@ -115,7 +111,7 @@ button {
 }
 
 button:hover {
-  background: #00B0FF;
+  background: #8750A1;
 }
 
 .full-width {
@@ -130,7 +126,7 @@ button:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: url(http://www.free-css.com/assets/files/free-css-templates/preview/page196/conquer/assets/img/4-5.jpg) no-repeat;
+  background: url(https://images.unsplash.com/photo-1417577097439-425fb7dec05e?ixlib=rb-0.3.5&s=eeda0529992cea043a854602f12763cf&auto=format&fit=crop&w=889&q=80);
   background-size: cover;
 }
 
@@ -179,7 +175,7 @@ p {
 
 .card {
   position: relative;
-  background: #F2F2F2;
+  background: #C39BD0;
   /*  display: flex;
     flex-direction: column;*/
   margin: 0 15px;
@@ -187,8 +183,18 @@ p {
 }
 .card .image {
   width: 100%;
-  background: blue;
   height: auto;
+}
+
+#home, .full-width {
+  color: white;
+}
+
+.card a, .full-width a {
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: inherit;
 }
 
 .text-container {
@@ -313,6 +319,8 @@ textarea {
     left: 0vw;
     top: 540px;
     z-index: -1;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
   }
 
   .side--right {
@@ -381,12 +389,12 @@ textarea {
   }
 }
 @media (max-width: 840px) {
-  label {
+  .hamburger {
     display: block;
     position: absolute;
     top: 10px;
     right: 10px;
-    background: #383E4C;
+    background: #080928;
     border-radius: 10%;
     font-size: 30px;
     font-weight: bold;
@@ -420,15 +428,15 @@ textarea {
     width: 100%;
     padding: 20px 30px;
     border: none;
-    background: #383E4C;
+    background: #080928;
     box-sizing: border-box;
   }
 
   nav :not(:last-child) {
-    border-bottom: 0.25px #FAFAFA solid;
+    border-bottom: 0.25px #9F88D8 solid;
   }
 
-  #toggle:checked + .menu {
+  .menu--open {
     display: block;
     height: 500px;
     position: absolute;

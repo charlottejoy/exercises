@@ -1,13 +1,15 @@
 // it was suggested to build this: http://www.free-css.com/free-css-templates/page196/conquer as a beginners project. I'm creating this with what I know and then maybe updating as I learn better techniques. The colours were once inspired by my yoga mat. BREAKS ARE IMPORTANT.
-$background: white;
-$container-background: #FAFAFA;
-$menu-text: #FAFAFA;
-$nav: #383E4C;
-$card:#F2F2F2;
-  
-$button:  #383E4C;
+$background: #29308A;//white;
+$whole-background: black;//#FAFAFA;
+$menu-text: #9F88D8;//#FAFAFA;
+$nav: #080928;//#383E4C;
+$nav-hover: #29308A;
+$card:#C39BD0;//#29308A;//#F2F2F2;
+ $card-text: black; 
+$full-width-text: white;
+$button:  #29308A;//#383E4C;
   $button-text: white;
-$button-hover:#00B0FF;
+$button-hover:#8750A1;//#00B0FF;
 
 $submit: #383E4C;
 $submit-hover: #00B0Ff;
@@ -28,7 +30,7 @@ $colour4: #FFFF00;//unused
 $colour5:#1DE9B6;//unused
 $colour6: #FFC400;//unused
 body{
-   background: $card;//$background;
+   background: $whole-background;//$background;
 }
 body, html{
   //background: $card;//$background;
@@ -94,13 +96,10 @@ nav a:last-child{
 }
 
 nav a:hover, nav a:active{
-  background: #646d7c;//rgba(255, 255, 255, 0.3);//$colour4;
+  background: $nav-hover;//#646d7c;//rgba(255, 255, 255, 0.3);//$colour4;
 }
 
-#toggle{
-  display: none;
-}
-label{
+.hamburger{
   display: none;
 }
 #about{
@@ -129,7 +128,7 @@ max-width: 1400px;
 }
 button{
   font-size: 24px;
-  color: white;
+  color: $button-text;
   background: $button;
   padding: 20px;
   border-radius: 5%;
@@ -140,6 +139,7 @@ button{
 button:hover{
   background: $button-hover;
 }
+
 .full-width{
   position: relative;
   width: 100%;//will need to change
@@ -152,7 +152,7 @@ button:hover{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-   background: url(http://www.free-css.com/assets/files/free-css-templates/preview/page196/conquer/assets/img/4-5.jpg) no-repeat;
+   background: url(https://images.unsplash.com/photo-1417577097439-425fb7dec05e?ixlib=rb-0.3.5&s=eeda0529992cea043a854602f12763cf&auto=format&fit=crop&w=889&q=80);//url(http://www.free-css.com/assets/files/free-css-templates/preview/page196/conquer/assets/img/4-5.jpg) no-repeat;
   background-size: cover;
 }
 .full-width:last-child{
@@ -212,21 +212,32 @@ p{
   .image{
     width: 100%; 
    // position: relative;
-    background: blue;
+   // background: blue;
     height: auto;
    // padding: 0px;
     
       //background: url(http://www.free-css.com/assets/files/free-css-templates/preview/page196/conquer/assets/img/1-1.jpg) no-repeat;
      //background-size: cover;
   }
+ 
 }
 
 .card:first-child{
  // margin-left: 0;
 }
 
+#home, .full-width{
+  color: $full-width-text;
+}
+.card a, .full-width a{
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: inherit;
+}
+
 .text-container{
-  color: black;
+  color: $card-text;
   left: 0;
   width: 100%;
  //  position: relative;
@@ -347,7 +358,7 @@ input{//400px;
 
 #submit{
   font-size: 24px;
-  color: white;
+  color: $button-text;
   background: $submit;
   width: auto;
   height: auto;
@@ -379,6 +390,8 @@ textarea{
   left: 0vw;
   top: 540px;
     z-index: -1;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
 }
 
 .side--right{
@@ -456,7 +469,7 @@ nav a:last-child{
 //estimate, change this
 @media(max-width:840px){
  
-  label{
+  .hamburger{
   display: block;
     position: absolute;
     top: 10px;
@@ -507,7 +520,7 @@ padding:20px 30px;
       border-bottom: .25px $menu-text solid;
   }
   
-  #toggle:checked + .menu{
+ .menu--open{
     display: block;
    //   background: none;
   //width: 100%;
@@ -524,7 +537,6 @@ height: 500px;// padding + px, probably about this
     transition: height 2s;
   }
   
-
   
   .cols-1{
     width: 98%;
