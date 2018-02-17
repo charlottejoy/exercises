@@ -10,44 +10,133 @@ body, html{
   display: flex;
   justify-content: center;
 }
-
+a{
+  text-decoration: none;
+  color: yellow;
+  text-transform: uppercase;
+}
+a:hover{
+  text-decoration: underline;
+}
 #content{
   background: 	#2bd1fc;
   padding: 2vmin;
   height: auto;
   width: 90vw;
   box-sizing: border-box;
+  max-width: 1400px;
 }
 form{
-  background:  #ff48c4;
+  background:  black;
   padding: 2vmin;
   box-sizing: border-box;
   height: auto;
    display: flex;
   flex-flow: column;
+  align-items: center;
   
 }
 
 .section{
   height: auto;
 padding: 1em;
+  width: 95%;
+  box-sizing: border-box;
+  background: #ff48c4;
+ /* border: black 1px solid;*/
+  margin: .5em 0;
 }
 
 #personal{
-  background: green;
   display: flex;
+  flex-flow: row wrap;
   justify-content: space-around;
 }
 
+#year{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#year-choices{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.year-choice{
+padding: 0 1em;
+}
+
+#continent{
+  text-align: center;
+}
 #songs{
-  background: red;
+   display: flex;
+  flex-direction: column;
+  align-items: center;
+ text-align: center;
 }
-#songs input{
-  margin-left: 1em;
+#song-options{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  max-width: 50em; 
 }
+.song-checkbox{
+padding: 0 2em;
+}
+
 #comments-section{
-  background: yellow;
+ 
+  text-align: center;
 }
+
+
+textarea{
+  width: 90%;
+	height: 10em;
+  background: #f3ea5f;
+  color: black;
+  border-radius: 5vmin;
+  padding: 2vmin;
+  box-sizing: border-box;
+}
+
+
 #name-contact{
-  background: blue;
+   display: flex;
+  flex-direction: column;
+  align-items: center;
+ 
+}
+
+#contact-fields{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  padding: 2em;
+  width: auto;
+}
+
+
+.contact{
+  margin-bottom: 1em;
+  width: 25em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.contact label{
+  margin:0 1em;
+}
+.contact input{
+    width: 30em;
+	height: 1em;
+  background: #f3ea5f;
+  color: black;
+  border-radius: 5vmin;
+  padding: 2vmin;
+  box-sizing: border-box;
 }
