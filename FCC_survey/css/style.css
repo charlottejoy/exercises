@@ -1,0 +1,53 @@
+/*http://www.color-hex.com/color-palette/25888*/
+
+body, html{
+  background: #f3ea5f;
+  font-size: 18px;
+  font-family: "helvetica", "arial", sans-serif;
+  font-weight: 600;
+  padding: 2vmin;
+   box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+#content{
+  background: 	#2bd1fc;
+  padding: 2vmin;
+  height: auto;
+  width: 90vw;
+  box-sizing: border-box;
+}
+form{
+  background:  #ff48c4;
+  padding: 2vmin;
+  box-sizing: border-box;
+  height: auto;
+   display: flex;
+  flex-flow: column;
+  
+}
+
+.section{
+  height: auto;
+padding: 1em;
+}
+
+#personal{
+  background: green;
+  display: flex;
+  justify-content: space-around;
+}
+
+#songs{
+  background: red;
+}
+#songs input{
+  margin-left: 1em;
+}
+#comments-section{
+  background: yellow;
+}
+#name-contact{
+  background: blue;
+}
