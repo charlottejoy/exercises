@@ -2,7 +2,6 @@
 
 body, html{
   background: #f3ea5f;
-  font-size: 18px;
   font-family: "helvetica", "arial", sans-serif;
   font-weight: 600;
   padding: 2vmin;
@@ -11,12 +10,17 @@ body, html{
   justify-content: center;
 }
 a{
-  text-decoration: none;
+  text-decoration: underline;
   color: yellow;
   text-transform: uppercase;
 }
 a:hover{
-  text-decoration: underline;
+  text-decoration: double underline;
+}
+
+h2{
+  margin: 2vh 2vw;
+  
 }
 #content{
   background: 	#2bd1fc;
@@ -24,13 +28,14 @@ a:hover{
   height: auto;
   width: 90vw;
   box-sizing: border-box;
-  max-width: 1400px;
+  max-width: 1200px;
 }
 form{
   background:  black;
   padding: 2vmin;
   box-sizing: border-box;
   height: auto;
+  width: 100%;
    display: flex;
   flex-flow: column;
   align-items: center;
@@ -39,8 +44,8 @@ form{
 
 .section{
   height: auto;
-padding: 1em;
-  width: 95%;
+padding: 2vw 2vh;
+  width: 100%;
   box-sizing: border-box;
   background: #ff48c4;
  /* border: black 1px solid;*/
@@ -64,8 +69,8 @@ padding: 1em;
   justify-content: center;
 }
 
-.year-choice{
-padding: 0 1em;
+.year-choice, #continent{
+padding: 0 2vw;
 }
 
 #continent{
@@ -82,9 +87,10 @@ padding: 0 1em;
   flex-flow: row wrap;
   justify-content: center;
   max-width: 50em; 
+  padding: 0 2vw;
 }
 .song-checkbox{
-padding: 0 2em;
+padding: 1vh 2vw;
 }
 
 #comments-section{
@@ -121,8 +127,8 @@ textarea{
 
 
 .contact{
-  margin-bottom: 1em;
-  width: 25em;
+  margin: 5px;
+  width: 307px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -132,11 +138,65 @@ textarea{
   margin:0 1em;
 }
 .contact input{
-    width: 30em;
+    width: auto;
 	height: 1em;
   background: #f3ea5f;
   color: black;
   border-radius: 5vmin;
   padding: 2vmin;
   box-sizing: border-box;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+@media(max-width: 900px){
+  #contact-fields{
+  
+  justify-content: center;
+}
+}
+
+@media(max-width: 550px){
+  .contact{
+  margin: 1%;
+  width: 100%;
+    flex-direction: column;
+}
+  .contact input{
+    width: auto;
+	height: 1.5em;
+  background: #f3ea5f;
+  color: black;
+  border-radius: 5vmin;
+  padding: 2vmin;
+  box-sizing: border-box;
+}
+}
+
+@media(max-width: 350px){
+  #year{
+    align-items: left;
+  }
+  #year-choices{
+    justify-content: flex-start; 
+  }
+  #continent{
+  text-align: left;
+}
+  
+#songs{
+  align-items: flex-start;
+ text-align: left;
+}
+#song-options{
+  justify-content: flex-start;
+}
+
 }
