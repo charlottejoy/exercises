@@ -1,107 +1,111 @@
 /*http://www.color-hex.com/color-palette/25888*/
 
-body, html{
+body,
+html {
   background: #f3ea5f;
   font-family: "helvetica", "arial", sans-serif;
   font-weight: 600;
   padding: 2vmin;
-   box-sizing: border-box;
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
 }
-a{
+
+a {
   text-decoration: underline;
   color: yellow;
   text-transform: uppercase;
 }
-a:hover{
+a:hover {
   text-decoration: double underline;
 }
 
-h2{
+h2 {
   margin: 2vh 2vw;
-  
 }
-#content{
-  background: 	#2bd1fc;
+
+#content {
+  background: #2bd1fc;
   padding: 2vmin;
   height: auto;
   width: 90vw;
   box-sizing: border-box;
   max-width: 1200px;
 }
-form{
-  background:  black;
+
+form {
+  background: black;
   padding: 2vmin;
   box-sizing: border-box;
   height: auto;
   width: 100%;
-   display: flex;
+  display: flex;
   flex-flow: column;
   align-items: center;
-  
 }
 
-.section{
+.section {
   height: auto;
-padding: 2vw 2vh;
+  padding: 2vw 2vh;
   width: 100%;
   box-sizing: border-box;
   background: #ff48c4;
- /* border: black 1px solid;*/
-  margin: .5em 0;
+  margin: 0.5em 0;
 }
 
-#personal{
+#personal {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
 }
 
-#year{
+#year {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-#year-choices{
+
+#year-choices {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
 }
 
-.year-choice, #continent{
-padding: 0 2vw;
-}
-
-#continent{
-  text-align: center;
-}
-#songs{
-   display: flex;
-  flex-direction: column;
-  align-items: center;
- text-align: center;
-}
-#song-options{
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  max-width: 50em; 
+.year-choice,
+#continent {
   padding: 0 2vw;
 }
-.song-checkbox{
-padding: 1vh 2vw;
-}
 
-#comments-section{
- 
+#continent {
   text-align: center;
 }
 
+#songs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
 
-textarea{
+#song-options {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  max-width: 50em;
+  padding: 0 2vw;
+}
+
+.song-checkbox {
+  padding: 1vh 2vw;
+}
+
+#comments-section {
+  text-align: center;
+}
+
+textarea {
   width: 90%;
-	height: 10em;
+  height: 10em;
   background: #f3ea5f;
   color: black;
   border-radius: 5vmin;
@@ -109,15 +113,13 @@ textarea{
   box-sizing: border-box;
 }
 
-
-#name-contact{
-   display: flex;
+#name-contact {
+  display: flex;
   flex-direction: column;
   align-items: center;
- 
 }
 
-#contact-fields{
+#contact-fields {
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
@@ -125,8 +127,7 @@ textarea{
   width: auto;
 }
 
-
-.contact{
+.contact {
   margin: 5px;
   width: 307px;
   display: flex;
@@ -134,12 +135,14 @@ textarea{
   justify-content: space-between;
   align-items: center;
 }
-.contact label{
-  margin:0 1em;
+
+.contact label {
+  margin: 0 1em;
 }
-.contact input{
-    width: auto;
-	height: 1em;
+
+.contact input {
+  width: auto;
+  height: 1.5em;
   background: #f3ea5f;
   color: black;
   border-radius: 5vmin;
@@ -154,49 +157,51 @@ input::-webkit-inner-spin-button {
 }
 
 input[type="number"] {
-    -moz-appearance: textfield;
-}
-@media(max-width: 900px){
-  #contact-fields{
-  
-  justify-content: center;
-}
+  -moz-appearance: textfield;
 }
 
-@media(max-width: 550px){
-  .contact{
-  margin: 1%;
-  width: 100%;
+@media (max-width: 900px) {
+  #contact-fields {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 550px) {
+  .contact {
+    width: 100%;
     flex-direction: column;
-}
-  .contact input{
+  }
+  
+  .contact input {
     width: auto;
-	height: 1.5em;
-  background: #f3ea5f;
-  color: black;
-  border-radius: 5vmin;
-  padding: 2vmin;
-  box-sizing: border-box;
-}
+    height: 1.5em;
+    background: #f3ea5f;
+    color: black;
+    border-radius: 5vmin;
+    padding: 2vmin;
+    box-sizing: border-box;
+  }
 }
 
-@media(max-width: 350px){
-  #year{
+@media (max-width: 350px) {
+  #year {
     align-items: left;
   }
-  #year-choices{
-    justify-content: flex-start; 
-  }
-  #continent{
-  text-align: left;
-}
   
-#songs{
-  align-items: flex-start;
- text-align: left;
-}
-#song-options{
-  justify-content: flex-start;
-}
+  #year-choices {
+    justify-content: flex-start;
+  }
+  
+  #continent {
+    text-align: left;
+  }
 
+  #songs {
+    align-items: flex-start;
+    text-align: left;
+  }
+  
+  #song-options {
+    justify-content: flex-start;
+  }
 }
