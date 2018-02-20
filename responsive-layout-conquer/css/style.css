@@ -6,7 +6,8 @@ body {
   background: black;
 }
 
-body, html {
+body,
+html {
   height: 100%;
   width: 100%;
   padding: 0px;
@@ -15,8 +16,8 @@ body, html {
   font-size: 18px;
   scroll-behavior: smooth;
   /*display: flex;//adding flex screws with the height of content
-    flex-direction: row;
-    justify-content: center;*/
+  flex-direction: row;
+  justify-content: center;*/
 }
 
 ::-webkit-scrollbar {
@@ -35,7 +36,7 @@ nav {
   top: 0;
   position: fixed;
   z-index: 2;
-  color: #9F88D8;
+  color: #9f88d8;
   background: #080928;
   display: flex;
   justify-content: center;
@@ -60,7 +61,7 @@ nav a {
   color: inherit;
   margin-right: 20px;
   padding: 20px 30px;
-  border: 1px #9F88D8 solid;
+  border: 1px #9f88d8 solid;
   font-size: 24px;
   font-weight: bold;
 }
@@ -69,12 +70,31 @@ nav a:last-child {
   margin-right: 0px;
 }
 
-nav a:hover, nav a:active {
-  background: #29308A;
+nav a:hover,
+nav a:active {
+  background: #29308a;
+}
+
+.hamburger,
+.hamburger--short {
+  display: none;
+  position: fixed;
+  right: 20px;
+  background: #8750a1;
+  color: #080928;
+  border-radius: 10%;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 2px 10px 4px 10px;
+  z-index: 5;
 }
 
 .hamburger {
-  display: none;
+  top: 10px;
+}
+
+.hamburger--short {
+  bottom: 10px;
 }
 
 #about {
@@ -109,37 +129,39 @@ nav a:hover, nav a:active {
   font-size: 24px;
   font-weight: bold;
   color: white;
-  background: #29308A;
+  background: #29308a;
   padding: 20px;
   border-radius: 5%;
   border: none;
-  -webkit-transition: background .5s;
+  -webkit-transition: background 0.5s;
   /* Safari */
-  transition: background .5s;
+  transition: background 0.5s;
   width: auto;
   height: auto;
 }
 
 .card button:hover {
-  background: #8750A1;
+  background: #8750a1;
 }
 
-.button--full-width, .full-width button {
+.button--full-width,
+.full-width button {
   font-size: 24px;
   font-weight: bold;
-  color: #29308A;
-  background: #C39BD0;
+  color: #29308a;
+  background: #c39bd0;
   padding: 20px;
   border-radius: 5%;
   border: none;
-  -webkit-transition: background .5s;
+  -webkit-transition: background 0.5s;
   /* Safari */
-  transition: background .5s;
+  transition: background 0.5s;
   width: auto;
   height: auto;
 }
 
-.button--full-width:hover, .full-width button:hover {
+.button--full-width:hover,
+.full-width button:hover {
   background: #ffffff;
 }
 
@@ -212,9 +234,9 @@ p {
 
 .card {
   position: relative;
-  background: #C39BD0;
+  background: #c39bd0;
   /*  display: flex;
-    flex-direction: column;*/
+  flex-direction: column;*/
   margin: 0 15px;
   margin-bottom: 30px;
 }
@@ -223,17 +245,20 @@ p {
   height: auto;
 }
 
-#home, .full-width {
+#home,
+.full-width {
   color: white;
 }
 
-.card a, .full-width a {
+.card a,
+.full-width a {
   font-weight: bold;
   text-transform: uppercase;
   color: inherit;
 }
 
-.card a:hover, .full-width a:hover {
+.card a:hover,
+.full-width a:hover {
   text-decoration: double underline;
 }
 
@@ -257,7 +282,8 @@ p {
 .cols-2 {
   width: 570px;
 }
-.cols-2 h2, .cols-2 p {
+.cols-2 h2,
+.cols-2 p {
   text-align: left;
 }
 .cols-2 button {
@@ -298,7 +324,9 @@ p {
   width: 48%;
 }
 
-input, textarea, .explanation {
+input,
+textarea,
+.explanation {
   background: white;
   color: black;
   border-radius: 10px;
@@ -310,7 +338,8 @@ input, textarea, .explanation {
   font-family: "helvetica", "arial", sans-serif;
 }
 
-input, textarea {
+input,
+textarea {
   padding: 5px 15px;
 }
 
@@ -330,7 +359,8 @@ textarea {
   height: 200px;
 }
 
-.side--right, .side--left {
+.side--right,
+.side--left {
   display: none;
 }
 
@@ -356,17 +386,35 @@ textarea {
     background: none;
   }
 
- /*   #service{
+  /*   #service{
   position: absolute;
   top: -20px;
 }*/
   /* #contact{
-     position: absolute;
-   top: -100px; 
-   }*/
+    position: absolute;
+  top: -100px; 
+  }*/
   .parallax-window {
     height: 300px;
     background: transparent;
+  }
+
+  .hamburger--short {
+    display: block;
+  }
+
+  .navigation {
+    opacity: 0;
+    -webkit-transition: opacity 1.5s;
+    /* Safari */
+    transition: opacity 1.5s;
+  }
+
+  .navigation--open {
+    opacity: 1;
+    -webkit-transition: opacity 1.5s;
+    /* Safari */
+    transition: opacity 1.5s;
   }
 }
 @media (min-width: 1400px) {
@@ -448,15 +496,6 @@ textarea {
 @media (max-width: 840px) and (min-height: 400px) {
   .hamburger {
     display: block;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: #080928;
-    border-radius: 10%;
-    font-size: 30px;
-    font-weight: bold;
-    right: 20px;
-    padding: 2px 10px 4px 10px;
   }
 
   .menu {
@@ -490,7 +529,7 @@ textarea {
   }
 
   nav :not(:last-child) {
-    border-bottom: 0.25px #9F88D8 solid;
+    border-bottom: 0.25px #9f88d8 solid;
   }
 
   .menu--open {
@@ -538,10 +577,11 @@ textarea {
   .cols-2 {
     width: 770px;
     /* .image{
-       height: 240px;
-     }*/
+      height: 240px;
+    }*/
   }
-  .cols-2 h2, .cols-2 p {
+  .cols-2 h2,
+  .cols-2 p {
     text-align: center;
   }
 
@@ -549,8 +589,8 @@ textarea {
     width: 510px;
     text-align: center;
     /* .image{
-       height: 180px;
-     }*/
+      height: 180px;
+    }*/
   }
   .cols-3 h2 {
     text-align: center;
@@ -585,7 +625,7 @@ textarea {
     background: none;
   }
 
- /* #services, #contact{
+  /* #services, #contact{
     position: absolute;
   top: 0px;
 }
@@ -607,10 +647,11 @@ textarea {
 }
 @media (max-width: 450px) {
   /* everything is one per row
-   cols-1 is still wider
-   using percentages + margins
-   }*/
-  .cols-1, .cols-2 {
+  cols-1 is still wider
+  using percentages + margins
+  }*/
+  .cols-1,
+  .cols-2 {
     width: 95%;
   }
 
