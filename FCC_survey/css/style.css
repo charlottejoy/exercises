@@ -79,7 +79,15 @@ form {
 #continent {
   text-align: center;
 }
+  select{
+    font-weight: 600;
+}
 
+.year-choice, .song-option{
+    display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
 #songs {
   display: flex;
   flex-direction: column;
@@ -97,6 +105,7 @@ form {
 
 .song-checkbox {
   padding: 1vh 2vw;
+
 }
 
 #comments-section {
@@ -164,6 +173,7 @@ input[type="number"] {
   #contact-fields {
     justify-content: center;
   }
+
 }
 
 @media (max-width: 550px) {
@@ -203,5 +213,21 @@ input[type="number"] {
   
   #song-options {
     justify-content: flex-start;
+  }
+}
+
+
+@media (pointer: coarse) {
+  
+  input[type="checkbox"], input[type="radio"]{
+ width: 2em;
+      height: 2em;
+}
+ 
+  .contact input{
+        height: 2.5em;
+  }
+  select{
+    font-size: 1.5em;
   }
 }
