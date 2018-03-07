@@ -21,7 +21,28 @@ nav{
   padding: 10px;
   box-sizing: border-box;
 }
-
+#nav-hamburger{
+  /*display: none;*/
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  font-size: 1.5em;
+  font-weight: 900;
+  z-index: 4;
+}
+.button--hamburger{
+  display: none;
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  font-size: 1.5em;
+  font-weight: 900;
+  z-index: 4;
+ /* background: #52FFA9;
+  padding: 2px;
+  border-radius: 5%;
+  */
+}
 .nav-link{
   display: block;
   padding: 10px;
@@ -62,18 +83,31 @@ h2,h3{
 p{
   margin-top: 0px;
 }
+
+code{
+  display: block;
+  background: #FFBEBE;
+}
 @media(max-width: 800px){
   body{
-    dsplay: flex;
+    display: flex;
     flex-direction: column;
   }
+  .button--hamburger{
+  display: block;
+    align: left;
+}
+  
+  
   nav{
     position: fixed;
+    top: -175px;
     height: 175px;
      width: 100%;
     max-width: 800px;
     z-index: 2;
     overflow: auto;
+  transition: top 0.5s;
   }
   .link-container{
     display: flex;
@@ -89,10 +123,16 @@ p{
   .nav-link{
     margin: 2px;
   }
+  
+  #nav-hamburger:checked ~ #navbar{
+   top: 0px;
+    transition: top 0.5s;
+  }
+  
   main{
     left: 0px;
     width: 100%;
     position: absolute;
-    top: 175px;
+    top: 0px;
   }
 }
