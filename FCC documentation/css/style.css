@@ -21,14 +21,15 @@ nav{
   padding: 10px;
   box-sizing: border-box;
 }
-#nav-hamburger{
-  /*display: none;*/
+nav-hamburger{
+  display: none;
+  /*
   position: fixed;
   right: 10px;
   top: 10px;
   font-size: 1.5em;
   font-weight: 900;
-  z-index: 4;
+  z-index: 4;*/
 }
 .button--hamburger{
   display: none;
@@ -63,7 +64,10 @@ a{
 a:hover{
 color: #5252FF;
 }
-
+.highlight{
+  background: #A9FF52;
+  font-weight: 600;
+}
 main{
   position: absolute;
   left: 30%;
