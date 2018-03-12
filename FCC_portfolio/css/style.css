@@ -8,6 +8,7 @@ body{
   flex-direction: column;
   align-items: center;
   font-family:"helvetica", "Arial", sans-serif;
+  background: #9370DB;
 }
 nav{
   position: fixed;
@@ -16,7 +17,7 @@ nav{
   max-width: 1400px;
   height: 100px;
   z-index: 2;
-  background: pink;
+  background: #9370DB;
   text-align: center;
   padding: 20px;
   box-sizing: border-box;
@@ -24,9 +25,10 @@ nav{
   flex-flow: row wrap;
   justify-content: space-around;
   align-items: center;
+  border-bottom: black 1px solid;
 }
 nav a{
-  color:inherit;
+  color:white;
   text-transform: uppercase;
   font-weight: 100;
   font-size: 1.75em;
@@ -35,19 +37,20 @@ nav a{
   margin: 5px;
 }
 nav a:hover{
-  color: cornflowerblue;
+  color: #000080;
 }
 section{
   box-sizing: border-box;
   padding: 60px;
   width: 100%;
   max-width: 1400px;
-  background: pink;
+  background: #9370DB;
   border-bottom: black 1px solid; 
 }
 .anchor{
   position: relative;
   top: -100px;
+   display: block;
 }
 .anchor--top{
   padding:-100px;
@@ -77,7 +80,7 @@ p{
   margin-bottom: 0;
   margin-top: .5em;
 }
-#projects{
+.container--projects{
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
@@ -111,31 +114,52 @@ p{
 .description--project{
   text-align: left;
 }
-.description--project a{
+.description--project a, .description--me a{
   text-decoration: none;
   text-transform: uppercase;
-  color: #555555;
+  color: #000080;
+  font-weight: 600;
 }
-.description--project a:hover{
-  color: cornflowerblue
-}
-#about{
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-}
-.container--about{
-  width: 60%;
+.description--project a:hover, .description--me a:hover{
+  color: #9370DB;
 }
 
-.description--me{
-  margin-bottom: 1em; 
-}
 .img--about{
   border-radius: 50%;
   width: 200px;
   height: 200px;
-   margin-right: 30px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  float: left;
+}
+.container--about{
+  width: 100%;
+}
+.description--me{
+  margin-bottom: 1em; 
+}
+
+#contact{
+ min-height: 100vh; 
+}
+
+.container--profile-links{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+.profile-links{
+  font-size: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  margin: 5px;
+  flex-grow: 2;
+}
+.profile-links:hover{
+  color: black;
 }
 @media (max-width: 800px){
   section{
@@ -159,15 +183,32 @@ p{
     min-width: 250px;*/
     margin: 10px;
   }
-  .container--about{
-    width: 100%;
-    order: 1;
-
-  }
+  
   .img--about{
-    order: 2;
-    margin-right: 0;
     height: 150px;
     width: 150px;
   }
+  .profile-links{
+    font-size: 1.5em;
+  }
 }
+
+@media (max-width:800px) and (min-aspect-ratio: 2/1){
+  nav{
+    max-height: 60px;
+    font-size:1em;
+  }
+  h1{
+  padding-top: 20px;
+     margin-top: 20px;
+    font-size:2em;
+  }
+   h2{
+    font-size: 1.5em;
+  }
+  .anchor{
+  top: -60px;
+}
+  
+}
+  
