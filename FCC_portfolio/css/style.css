@@ -10,6 +10,9 @@ body{
   font-family:"helvetica", "Arial", sans-serif;
   background: #9370DB;
 }
+html{
+    scroll-behavior: smooth;
+}
 nav{
   position: fixed;
   top: 0;
@@ -190,6 +193,38 @@ p{
   }
   .profile-links{
     font-size: 1.5em;
+  }
+}
+@media(max-width:550px){
+  
+ nav{
+  padding: 0px;
+  align-items: flex-start;
+}
+}
+@media(max-width:300px){
+  
+ nav{
+font-size:1em;
+height: auto;
+max-height: 200px;
+}
+  h1{
+    padding-top: 20px;
+    font-size: 2em;
+  }
+  h2{
+    font-size: 1.5em;
+  }
+}
+@media(max-width:280px){
+  h1{
+    padding-top: 70px;
+  }
+}
+@media(max-width:250px){
+  h1{
+    padding-top: 120px;
   }
 }
 
