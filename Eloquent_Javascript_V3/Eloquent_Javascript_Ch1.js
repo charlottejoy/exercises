@@ -28,7 +28,54 @@ Useful if you're in double-quote territory. */
 //****BACKTICK QUOTED STRINGS or TEMPLATE LISTERALS****
 console.log(`5 + 5 is ${5+5}`);
 
+//RESULT 5 + 5 is 10
 var convert = "convert";
-var backticks = "compute and " +convert;
+var backticks = "compute and ";
 console.log(`I like that it can be on mulitple lines 
-and that it will ${backticks} lot of things to a string`);
+and that it will ${backticks + convert} lot of things to a string. High ${2+3}!`);
+
+/*RESULT: I like that it can be on mulitple lines 
+and that it will compute and convert lot of things to a string. High 5!*/
+
+//**** BOOLEANS*/
+
+console.log(NAN == NAN);
+//RESULT: false (!!!!); Because it's meant to represent the result of a "nonsensical computation", it isn't equal to another nonsense computation.
+
+console.log(true&&false);
+console.log(false&&false);
+//RESULT: false. FALSE just wins here if it's present
+console.log(true&&true);
+//RESULT: true
+
+console.log(true|| false);
+//RESULT: true. True wins here if it's present
+
+
+//***UNARY, BINARY, TERNARY OPERATOR ****
+
+console.log(typeof(6));
+//Result: number. Unary: It just takes only one value. Another example is minus sign in -8.
+
+console.log(8+4);
+//Result: 12. Binary. It takes 2 values. Examples are *, <<, ||, %, etc. Here's a list:https://stackoverflow.com/questions/12122293/list-of-all-binary-operators-in-javascript
+
+console.log(true ? 1:2);
+//Result: 1. Ternary. This is the conditional operator, the only ternary operator in JS. Why 1? If true, the first option is chose, if false, the second
+console.log(6>7 ? 9 :8); // 8 >> if(6>7){console.log(9);} else {console.log(8)};
+
+
+//***EMPTY VALUES ****
+console.log(null); console.log(undefined);// Pretty much the same. No meaningul value. You'll see "undefined" if what you ask for = no meaningful value
+
+//**** AUTOMATIC TYPE CONVERSION****
+//Javascript will try to make things work. If your values aren't the same type, you might get weird things.
+
+console.log(5 == "5");
+//Result: true. With "=="" will try to convert different types to compare them.
+
+console.log(null ==undefined); console.log(undefined==0); console.log(null==0);
+//Result: true, false, false. null is only == to undefined
+
+console.log(5 ==="5");
+//Result: false, with "===""
