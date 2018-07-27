@@ -85,7 +85,7 @@ console.log(5 ==="5");
 //Result: false, with "===""
 
 
-// A practical example of ternary, backticks, 
+// A practical example of ternary operators, binary operators, backticks, and escaped characters
 
 function canIBuy(income, expenses, savingsGoal, splurge){
     var disposableIncome = income - expenses;
@@ -93,8 +93,40 @@ function canIBuy(income, expenses, savingsGoal, splurge){
     }
     
     canIBuy(2000, 1600, 200, 200);
+    //Result: Go for it. You'll have $0 more than your savings Goal left.
+
     canIBuy(3000, 1000, 200, 400);
+    //Result: Go for it. You'll have $1400 more than your savings Goal left.
+
     canIBuy(2000, 1600, 400, 200);
+    //Result: Sorry, that would put you behind your goal by $200
 
 
-// A practical example of booleans
+// A practical example of booleans && ||
+
+function whatsForLunch(choice, isFav, isAlright){
+    choice == isFav || choice == isAlright ? console.log(`Yum, I'll have ${choice}`) : console.log( `No thanks.`);
+}
+// One must be true to equal true and show first value.
+whatsForLunch("pizza", "burrito", "pizza");
+//Result: Yum, I'll have pizza
+
+whatsForLunch("hotdogs", "salad", "tofu");
+//Result: No thanks.
+
+var banned =["Joe", "Paul", "Mary", "Gordon"];
+function welcome(name, age){
+banned.indexOf(name) == -1 && age >= 18 ? console.log(`Welcome to Moe's bar.`) : console.log(`Sorry, you can't come in`);
+}
+
+//Both must be true to equal true and show first value.
+welcome("Jill", 20);
+//Result: Welcome to Moe's bar.
+welcome("Bob", 16);
+//Result: Sorry, you can't come in
+welcome ("Joe", 42);
+//Result: Sorry, you can't come in
+welcome("Mary", 25);
+//Result: Sorry, you can't come in
+
+
