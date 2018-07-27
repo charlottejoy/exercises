@@ -51,6 +51,10 @@ console.log(true&&true);
 console.log(true|| false);
 //RESULT: true. True wins here if it's present
 
+function hey(){
+    console.log("I'm a function");
+}
+
 
 //***UNARY, BINARY, TERNARY OPERATOR ****
 
@@ -79,3 +83,18 @@ console.log(null ==undefined); console.log(undefined==0); console.log(null==0);
 
 console.log(5 ==="5");
 //Result: false, with "===""
+
+
+// A practical example of ternary, backticks, 
+
+function canIBuy(income, expenses, savingsGoal, splurge){
+    var disposableIncome = income - expenses;
+    (disposableIncome - splurge >= savingsGoal) ? console.log(`Go for it. You\'ll have \$${disposableIncome - savingsGoal - splurge} more than your savings Goal left.`) : console.log(`Sorry, that would put you behind your goal by \$${-(disposableIncome - savingsGoal - splurge)}`);
+    }
+    
+    canIBuy(2000, 1600, 200, 200);
+    canIBuy(3000, 1000, 200, 400);
+    canIBuy(2000, 1600, 400, 200);
+
+
+// A practical example of booleans
