@@ -1,0 +1,59 @@
+body {
+  height: 100%;
+}
+
+.container > div {
+  background: blue;
+}
+
+.container {
+  display: grid;
+  height: 95vmin;
+  width: 95vmin;
+  background: black;
+  margin: auto;
+  grid-template-columns: repeat 4, 1fr;
+  grid-template-rows: repeat(7, 1fr);
+  grid-template-areas: "s s . . . . . . . . . ." ". . . . b b b . . . . ." ". . c c c c c c c c c ." ". . . . . . . . . . . .";
+}
+
+body{
+	height: 100%;
+}
+.container > div{
+	background: blue;
+}
+.container{
+	display: grid;
+	height: 95vmin;
+	width: 95vmin;
+	background: black;
+	margin: auto;
+	grid-template-columns: repeat (4, 1fr);
+	grid-template-rows: repeat(7, 1fr);
+	grid-template-areas:
+		"s s . . . . . . . . . ."
+		". . . . b b b . . . . ."
+		". . c c c c c c c c c ."
+		". . . . . . . . . . . ."
+}
+
+.block--top{
+  background: #FCAB25;
+}
+.block--l1{
+  /*#64CFF4, #6B52E2*/
+}
+.block--r1{
+  background: #F15554;
+  /*black*/
+}
+.block--l2{}
+.block--r2{}
+.block--small--ll1{}
+.block--small--l1{}
+.block--small--r1{}
+.block--r3{}
+.block--small--ll2{}
+.block--small--l2{}
+.block--smallr--2{}
