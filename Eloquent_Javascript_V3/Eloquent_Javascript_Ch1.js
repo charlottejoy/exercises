@@ -116,7 +116,7 @@ whatsForLunch("hotdogs", "salad", "tofu");
 
 var banned =["Joe", "Paul", "Mary", "Gordon"];
 function welcome(name, age){
-banned.indexOf(name) == -1 && age >= 18 ? console.log(`Welcome to Moe's bar.`) : console.log(`Sorry, you can't come in`);
+banned.indexOf(name) == -1 && age >= 18 ? console.log(`Welcome to Moe's bar.`) : console.log(`Sorry, you can't come in.`);
 }
 
 //Both must be true to equal true and show first value.

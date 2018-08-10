@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+    </head>
+    <body>
+<canvas id="canvas"></canvas>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/95/three.js"></script>
+<script>
+    console.clear();
+    var renderer = new THREE.WebGLRenderer({canvas: document.getElementById("canvas"), antialias: true});
+    renderer.setClearColor("skyblue");
+    renderer.setPixelRatio(window.devicePixelRatio);//grabs rato of device
+    renderer.setSize(window.innerWidth, window.innerHeight);
+
+
+    var camera = new THREE.PerspectiveCamera(35, window.innerWidth/window.innerHeight, 0.1, 3000 );//degrees that are seen-field of view, divide width/ height almost always, objects closer or further than this won't render.
+    var scene = new THREE.Scene();
+
+    var pyramidGeometry = new THREE.CylinderGeometry(0, 0.8, 2, 4);
+    var pyramidMaterial = new THREE.MeshLambertMaterial({color: "#DD9787"}); //can't see this material until you add light because of meshLambert- needs lights. 
+    var pyramidMesh= new THREE.Mesh(pyramidGeometry, pyramidMaterial);
+    pyramidMesh.position.set(0, 1, -8);
+    scene.add(pyramidMesh);
+
+    var boxGeometry = new THREE.BoxGeometry(1,1,1);
+    var boxMaterial = new THREE.MeshBasicMaterial({color: "white" });
+    var boxMesh = new THREE.Mesh(boxGeometry, boxMaterial);
+    boxMesh.position.set(2 ,0, -8);
+    scene.add(boxMesh);
+
+    var sphereGeometry = new THREE.SphereGeometry(0.5); //just the radius, but you can add more specifics
+    var sphereMaterial = new THREE.MeshBasicMaterial({wireframe: true, color:"#000000"});
+    var sphereMesh = new THREE.Mesh(sphereGeometry, sphereMaterial);
+    sphereMesh.position.set(3, 1, -8);
+    scene.add(sphereMesh);
+
+    var circleGeometry = new THREE.CircleBufferGeometry(0.5);
+    var circleMaterial = new THREE.MeshBasicMaterial({color: "yellow"});
+    var circleMesh = new THREE.Mesh(circleGeometry, circleMaterial);
+    circleMesh.position.set(-2, 0, -8);
+    circleMesh.rotation.set(0.2, 0.8, 0);// thie uses Euller Angles
+    scene.add(circleMesh);
+
+   function paraFunction(u, v){
+        ///define 3 axis of this geometry
+
+        var x = -5 + 5 * u;
+        var y = -5 + 5 * v;
+        var z = (Math.sin(u * Math.PI) + Math.sin(v * Math.PI)) * -7;
+    console.log("hey");
+        return new THREE.Vector3(x, y, z);
+    }
+
+    var paraGeometry = new THREE.ParametricGeometry(paraFunction, 8, 8);
+    var paraMaterial = new THREE.MeshBasicMaterial({color: "green"});
+    var paraMesh = new THREE.Mesh(paraGeometry, paraMaterial);
+    paraMesh.position.set(0, -2, -10);
+    scene.add(paraMesh);
+
+
+    var lightOne= new THREE.AmbientLight("#FFFFFF", 0.8);//color, intensity
+    var lightTwo = new THREE.PointLight("#FFFFFF", 0.8);
+
+    scene.add(lightOne);
+    scene.add(lightTwo);
+
+    requestAnimationFrame (render);
+
+    function render(){
+        renderer.render(scene, camera);
+        requestAnimationFrame(render);
+        pyramidMesh.rotation.y += .01;
+        sphereMesh.rotation.z += .05;
+        /*paraMesh.rotation.x += 0.1;
+        paraMesh.rotation.y += 0.1;*/
+    }
+
+</script>    
+</body>
+</html>
