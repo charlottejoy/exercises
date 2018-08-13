@@ -7,6 +7,11 @@
     <body>
 <canvas id="canvas"></canvas>
 
+<!--<script type="x-shader/x-vertex" id = "vertexShader">
+    void main{
+
+    }
+</script>-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/95/three.js"></script>
 <script>
     console.clear();
@@ -25,20 +30,46 @@
     pyramidMesh.position.set(0, 1, -8);
     scene.add(pyramidMesh);
 
+//Create materials
+    var boxMaterial = new THREE.MeshNormalMaterial({
+        color: 0xff0000,
+        transparent: true,
+        opacity: 1,
+    });
+
+    var planeMaterial = new THREE.MeshPhongMaterial({
+        color: "blue",
+        specular: "green",
+        shininess: 50,
+    });
+
+    var circleMaterial = new THREE.MeshStandardMaterial({
+        color: "pink",
+        roughness: 5.0,
+        metalness: 0.2,
+    });
+
+    var sphereMaterial = new THREE.LineBasicMaterial({
+        color: "grey", 
+    });
+
+   
+    
+
     var boxGeometry = new THREE.BoxGeometry(1,1,1);
-    var boxMaterial = new THREE.MeshBasicMaterial({color: "white" });
+    /*var boxMaterial = new THREE.MeshBasicMaterial({color: "white" });*/
     var boxMesh = new THREE.Mesh(boxGeometry, boxMaterial);
     boxMesh.position.set(2 ,0, -8);
     scene.add(boxMesh);
 
     var sphereGeometry = new THREE.SphereGeometry(0.5); //just the radius, but you can add more specifics
-    var sphereMaterial = new THREE.MeshBasicMaterial({wireframe: true, color:"#000000"});
-    var sphereMesh = new THREE.Mesh(sphereGeometry, sphereMaterial);
+    /*var sphereMaterial = new THREE.MeshBasicMaterial({wireframe: true, color:"#000000"});*/
+    var sphereMesh = new THREE.Line(sphereGeometry, sphereMaterial);//Mesh shows the "skin", line shows a type of wireframe;
     sphereMesh.position.set(3, 1, -8);
     scene.add(sphereMesh);
 
     var circleGeometry = new THREE.CircleBufferGeometry(0.5);
-    var circleMaterial = new THREE.MeshBasicMaterial({color: "yellow"});
+    /*var circleMaterial = new THREE.MeshBasicMaterial({color: "yellow"});*/
     var circleMesh = new THREE.Mesh(circleGeometry, circleMaterial);
     circleMesh.position.set(-2, 0, -8);
     circleMesh.rotation.set(0.2, 0.8, 0);// thie uses Euller Angles
@@ -57,9 +88,15 @@
     var paraGeometry = new THREE.ParametricGeometry(paraFunction, 8, 8);
     var paraMaterial = new THREE.MeshBasicMaterial({color: "green"});
     var paraMesh = new THREE.Mesh(paraGeometry, paraMaterial);
-    paraMesh.position.set(0, -2, -10);
+    paraMesh.position.set(0, -2, -100);
     scene.add(paraMesh);
 
+
+    var planeGeometry = new THREE.PlaneGeometry(10,10);
+    /*var planeMaterial = new THREE.MeshBasicMaterial({color: "blue"});*/
+    var planeMesh = new THREE.Mesh(planeGeometry, planeMaterial);
+    planeMesh.position.set(0, -20, -100);
+    scene.add(planeMesh);
 
     var lightOne= new THREE.AmbientLight("#FFFFFF", 0.8);//color, intensity
     var lightTwo = new THREE.PointLight("#FFFFFF", 0.8);
@@ -69,13 +106,20 @@
 
     requestAnimationFrame (render);
 
+    var delta = 0;
+
     function render(){
         renderer.render(scene, camera);
         requestAnimationFrame(render);
         pyramidMesh.rotation.y += .01;
         sphereMesh.rotation.z += .05;
-        /*paraMesh.rotation.x += 0.1;
-        paraMesh.rotation.y += 0.1;*/
+
+        delta +=0.1;
+        planeGeometry.vertices[0].z = -25 + Math.sin(delta) * 50;
+        planeGeometry.verticesNeedUpdate = true;
+
+        paraMesh.rotation.x += 0.1;
+        paraMesh.rotation.y += 0.1;
     }
 
 </script>    
