@@ -1,0 +1,30 @@
+body,html{
+height: 100%;
+width:100%;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+
+.path{ /*props that are specific to svg*/
+    stroke-dasharray: 6000; /*length of dash*/
+    stroke-dashoffset: 6000;/*offset of first dash*/
+    transition: 5s all;/* length of transition for which props*/
+}
+
+svg:hover .path{
+    stroke-dashoffset: 0;
+    stroke: pink;
+}
+
+.behind{
+    stroke-dasharray: 30;
+    stroke-dashoffset: 0;
+    transition: 5s all;
+}
+
+svg:hover .behind{
+    stroke-dashoffset: 300;
+    stroke: blue;
+}

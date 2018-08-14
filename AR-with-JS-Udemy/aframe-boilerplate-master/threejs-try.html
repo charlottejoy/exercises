@@ -7,14 +7,35 @@
     <body>
 <canvas id="canvas"></canvas>
 
-<!--<script type="x-shader/x-vertex" id = "vertexShader">
-    void main{
-
-    }
-</script>-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/95/three.js"></script>
+<!--Create Shaders needs to be a type that's not js-->
+<!--Vertex Shader-->
+<script type="x-shader/x-vertex" id = "vertexShader">
+    void main()
+    {
+        vec4 modelViewPosition = modelViewMatrix * vec4(position, 1.0);
+        gl_Position = projectionMatrix * modelViewPosition;
+    }
+</script>
+<!--Fragment Shader-->
+<script type = "x-shader/x-fragment" id = "fragmentShader">
+    void main()
+    {
+        gl_FragColor = vec4(5.0, 0.0, 5.0, 0.0);
+    }
+</script>
 <script>
     console.clear();
+
+    //Custom Shader
+   var customMat = new THREE.ShaderMaterial({
+        vertexShader: document.getElementById("vertextShader").textContent,
+        fragmentShader: document.getElementById("fragmentShader").textContent,
+    });
+
+   
+
+
     var renderer = new THREE.WebGLRenderer({canvas: document.getElementById("canvas"), antialias: true});
     renderer.setClearColor("skyblue");
     renderer.setPixelRatio(window.devicePixelRatio);//grabs rato of device
@@ -29,6 +50,16 @@
     var pyramidMesh= new THREE.Mesh(pyramidGeometry, pyramidMaterial);
     pyramidMesh.position.set(0, 1, -8);
     scene.add(pyramidMesh);
+
+ var box2Geometry = new THREE.BoxBufferGeometry(1, 1, 1,  10, 10, 10);
+    var box2Mesh =  new THREE.Mesh(box2Geometry, customMat);
+    box2Mesh.position.set(-2 ,-1, -10);
+    scene.add(box2Mesh);
+
+   /* var cubeGeometry = new THREE.CubeGeometry(100,100,100);
+    var cubeMesh = new THREE.Mesh(cubeGeometry, pyramidMaterial);
+    cubeMesh.position.set(-1,0, -10);
+    scene.add(cubeMesh);*/
 
 //Create materials
     var boxMaterial = new THREE.MeshNormalMaterial({

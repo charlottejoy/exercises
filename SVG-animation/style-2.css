@@ -1,0 +1,61 @@
+body{
+    background: pink;
+}
+
+svg{
+    /*Why did I not know that, I was using flexbox all the time*/
+    position: absolute;
+    top:0;
+    bottom:0;
+    left: 0;
+    right: 0;
+    margin: auto; 
+
+    width: 90vmin;
+    height: 90vmin;
+}
+
+svg circle{
+    fill: none;
+    stroke-width: 5px;
+    stroke-dasharray: 800;
+    stroke-dashoffset: 800;
+    opacity: 0; /*is this nec?*/
+    animation: circle-outline 4s ease forwards infinite;
+}
+
+svg path{
+    fill: none;
+    stroke: black;
+    stroke-width: 3px;
+    stroke-dasharray: 400;
+    stroke-dashoffset: 400;
+    opacity: 0; /*is this nec?*/
+    animation: text-outline 4s ease forwards infinite;
+}
+
+@keyframes circle-outline{
+    from{
+        stroke-dashoffset: 800;
+        opacity: 0;
+    }
+    to{
+        stroke-dashoffset: 0;
+        opacity: 1;;
+    }
+}
+
+@keyframes text-outline{
+    from{
+        stroke-dashoffset: 400;
+        opacity: 0;
+    }
+    to{
+        stroke-dashoffset: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes total{
+
+}
