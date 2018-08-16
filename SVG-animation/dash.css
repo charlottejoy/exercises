@@ -1,0 +1,33 @@
+/* By offesetting so that there are no partial lines visible it makes it easier to appear infinite. We also go between a dashoffset that is the same value as the dash array to one that is minus that amount*/
+body{
+    background: rgb(20, 80, 74);
+}
+
+svg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+svg line{
+    stroke: turquoise;
+    stroke-dasharray: 30;
+    stroke-dashoffset: 30;
+    animation: move-lines 300ms linear infinite forwards;
+}
+
+svg path{
+    fill: turquoise;
+}
+
+@keyframes move-lines{
+    from{
+        stroke-dashoffset: -30;
+    }
+    to{
+        stroke-dashoffset: 30;
+    }
+}

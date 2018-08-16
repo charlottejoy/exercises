@@ -1,0 +1,63 @@
+body{
+    background: grey;
+}
+
+svg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+svg rect{
+    fill: none;
+    stroke: lightgrey;
+    stroke-width: 8px;
+    stroke-dasharray: 2000;
+    stroke-dashoffset: 2000;
+    animation: outline-animation 5s linear 1 forwards;
+}
+
+svg line{
+    stroke: lightgrey;
+    stroke-width: 5px;
+    stroke-dasharray: 400;
+    stroke-dashoffset: 400;
+    animation: lines-animation 4s linear 1 1s forwards;
+}
+
+
+svg path{
+    fill: lightgrey;
+    opacity: 0;
+    animation: path-animation 1s linear 1 4s forwards;
+}
+
+@keyframes outline-animation{
+    from{
+        stroke-dashoffset: 2000;
+    }
+    to{
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes lines-animation{
+    from{
+        stroke-dashoffset: 400;
+    }
+    to{
+        stroke-dashoffset: -275;/* bringing it out the other side*/
+    }
+}
+
+@keyframes path-animation{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}

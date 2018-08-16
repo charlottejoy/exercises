@@ -1,0 +1,1 @@
+These exercises were done with the [SVG & CSS Animation - Using HTML & CSS course from Udemy](https://www.udemy.com/svg-animation).

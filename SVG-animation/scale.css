@@ -1,0 +1,43 @@
+body{
+    background: #ee7674;
+}
+
+svg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+#top polygon{
+    fill: #f49e4c;
+    stroke-width: 3px;
+    animation: scale 3s linear 500ms infinite alternate;
+    transform-origin: 50% 50%;
+}
+
+#middle polygon{
+    fill: blue;
+    stroke-width: 3px;
+    animation: scale 5s linear 1s infinite alternate;
+    transform-origin: 50% 50%;
+}
+
+#bottom polygon{
+    fill: yellow;
+    stroke-width: 3px;
+    animation: scale 4s linear infinite alternate;
+    transform-origin: 50% 50%;
+}
+
+@keyframes scale{
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(0.5);
+    }
+}
+

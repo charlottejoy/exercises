@@ -1,0 +1,29 @@
+body{
+background: yellow;
+}
+
+svg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+svg polygon{
+    stroke-dasharray: 500;
+    stroke-dashoffset: 500;
+    animation: diamond 5s infinite forwards linear;
+    transform-origin: 50% 50%; /*so the rotation is centered around 50% of the height and 50% of the width*/
+}
+
+@keyframes diamond{
+    from{
+        stroke-dashoffset: 500;
+    }
+    to{
+        stroke-dashoffset: 0;
+        transform: rotate(-720deg);
+    }
+}
