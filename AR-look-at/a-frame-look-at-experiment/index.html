@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>A-frame look-at experiment</title>
+  <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"> </script>
+  <script src="https://unpkg.com/aframe-look-at-component@0.5.1/dist/aframe-look-at-component.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+  
+  
+</head>
+
+<body>
+
+  <!-- Morty: https://sketchfab.com/models/be593a67935e4cdeb39bca3f44b51d88
+Rick: https://sketchfab.com/models/da6e418ef5ca4414af754fc91a431e8d#download-->
+<a-scene id="scene" embedded arjs='sourceType: webcam;'>
+	<a-marker preset="kanji"><!--<a-box id = "blue" color="blue" position="0 .5 0"  height=".5" width= ".5"  depth = ".5" look-at="#pink"></a-box>-->
+		<a-gltf-model  id="morty" src="https://raw.githubusercontent.com/charlottejoy/exercises/master/AR-look-at/morty_smith_rigged/scene.gltf" position="0 0 0" scale=".5 .5 .5" look-at="#rick"></a-gltf-model><!--look-at="#rick"-->
+	</a-marker>
+	
+
+	
+	<a-marker preset="hiro">
+		<a-gltf-model  id="rick" src="https://raw.githubusercontent.com/charlottejoy/exercises/master/AR-look-at/rick_sanchez/scene.gltf" position="0 0 0"  scale="0.0001 0.0001 0.0001" look-at="#morty"></a-gltf-model>
+	<!--<a-box id ="pink" height=".5" width=".5" depth=".5" color="pink" position= "0 .5 0" look-at="#blue">-->
+		<!--<a-animation attribute="position" to="5 2 -1" dur="5000" direction="alternate" repeat="indefinite">
+		</a-animation>--></a-box>
+		</a-marker>
+	<a-entity camera></a-entity>
+	</a-scene>
+  
+  
+
+</body>
+
+</html>
