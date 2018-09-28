@@ -37,6 +37,26 @@ sumTest(2,4);
 }
 arrowFunction();
 
+const squareListArr=[4, 5.6, -9.8, 3.14, 42, 6, 8.34, -2];
+
+  const squareList = (arr) => {
+  "use strict";
+  // change code below this line
+  const positiveNums = arr.filter((nums) => nums > 0 && nums % 1 == 0);
+  const squaredIntegers = positiveNums.map(num=>Math.pow(num, 2));
+  // change code above this line
+  return squaredIntegers;
+};
+// test your code
+
+console.log(squareList(squareListArr));
+
+//These let you have a default value like in the destructured array below
+const increment=(number, value=1)=>number+value;
+
+console.log(increment(5, 2)); //  7
+console.log(increment(5));// 6
+
 
 /***Operators***/
 
@@ -57,6 +77,12 @@ console.log(newerArr);//[1,2,7,1,2,3,4,5]
 
 }
 showSpread();
+
+//Rest
+//LOOKUP REST VS SPREAD 
+const sumRest=(...nums)=>nums.reduce((a,b) => a+b,0);
+console.log(sumRest(1, 2, 3)); // 6
+
 
 /***Destructuring ***/
 /*"The destructuring assignment syntax is a JavaScript expression that makes it possible to unpack values from arrays, or properties from objects, into distinct variables."
@@ -82,7 +108,7 @@ function destructuredArray(){
   console.log(z);//Mother
 
   let nope;
-  let[time=nope, meal="second breakfast"]= ["morning"];//this is a deafult value, it helps if the value set is undefined
+  let[time=nope, meal="second breakfast"]= ["morning"];//this is a default value, it helps if the value set is undefined
   console.log(time);//morning
   console.log(meal);//second breakfast
 }
