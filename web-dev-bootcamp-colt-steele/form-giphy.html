@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Giphy search form</title>
+</head>
+<body>
+    <div>
+        <h1> Enjoy a Giphy search :-)</h1>
+        <form id="search" method="get" target="_blank">
+            <input id="term" type= "text" placeholder="What do you want to find?"></input>
+        
+            <input type="submit" value="Do it!" onclick="search()">
+        <form>
+    </div>
+    <style>
+        html, body{
+        height: 100%;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        font-family: arial, helvitica, sans-serif;
+        background: #ff1744;
+        }
+        
+        div{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        h1{
+        color: white;	
+        }
+
+        input{
+            font-size: 1.25em;
+            text-align: center;
+            padding: .5em;
+            margin: .25em 1em;
+            border: none;
+            box-shadow: none;
+            border-radius: 10px;
+        }
+
+        input[type=text]{
+            background: #ffff00;
+        }
+
+        input[type=submit]{
+            background: #00e676;
+        }
+        input[type=submit]:hover{
+            background: #76ff03;
+            text-decoration:underline ;
+            text-decoration-style: wavy;
+        }
+    </style>
+    <script>
+        function search(){
+            let searchTerm = document.getElementById("term").value;
+            document.getElementById("search").action = "https://giphy.com/search/" + searchTerm;
+        }
+    </script>    
+</body>
+</html>
