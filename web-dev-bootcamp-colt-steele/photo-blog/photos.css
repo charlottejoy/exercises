@@ -1,0 +1,20 @@
+body{
+    font-family: 'Raleway', sans-serif;
+}
+img{
+    width: 30%;
+    float: left; /* removes space as well as to left */
+    margin: 1.66%; /* 10%/6 margins */
+}
+
+h1{
+    margin-left: 1.66%;
+    font-weight: 800;
+    font-size: 23px;
+    text-transform: uppercase;
+    width: 16em;
+    padding-bottom: 10px;
+    border-bottom: #f1f1f1 2px solid;
+    
+}
+
