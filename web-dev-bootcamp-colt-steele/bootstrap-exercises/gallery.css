@@ -1,0 +1,36 @@
+body{
+    padding-top: 70px;
+    background: #E1E2E1
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.navbar, .navbar a{
+    background: #ffcdd2;
+    color: black;
+}
+.nav>li>a:focus, .nav>li>a:hover{
+    background: #cb9ca1;
+}
+.navbar-toggle .icon-bar{
+    background-color: #563d7c; /* hamburger lines */
+}
+.navbar-toggle{
+    background-color: #cb9ca1; /* hamburger background */
+}
+
+.jumbotron{
+    background: #f5f5f6; 
+}
+.fa-camera-retro{
+    color: #563d7c;;
+}
+
+.thumbnail{
+    padding: 10px;
+    border-radius: 0px;
+}
